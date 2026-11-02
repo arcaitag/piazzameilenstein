@@ -40,12 +40,13 @@ Solange `ALLOW_INDEXING` nicht `true` ist, sperrt `robots.txt` die Seite und all
 
 ## Veröffentlichen
 
-Der Ordner ist bereits mit dem Vercel-Projekt **piazza-meilenstein** (Team «Beni's projects») verknüpft (`.vercel/project.json`).
+Dieses Repository ist mit dem Vercel-Projekt **piazza-meilenstein** (Team «Beni's projects») verbunden. Jeder Push auf `main` wird automatisch gebaut (Node 24) und unter https://piazza-meilenstein.vercel.app veröffentlicht. Pushes auf andere Branches ergeben eine Vorschau-Adresse.
+
+Von Hand geht es auch:
 
 ```bash
+npx vercel link    # einmalig, mit dem Vercel-Konto des Teams
 npx vercel --prod
 ```
 
-Beim ersten Mal öffnet sich der Browser zum Anmelden – mit dem Vercel-Konto, das Zugriff auf das Team hat. Vercel baut die Seite selbst (Node 24) und gibt am Schluss die Adresse aus.
-
-**Wichtig:** Neue Projekte in diesem Team sind standardmässig mit «Vercel Authentication» geschützt (auch die Produktionsadresse). Damit Gäste die Seite sehen, in Vercel unter *Project → Settings → Deployment Protection* die Vercel Authentication auf «Standard Protection» stellen oder ausschalten – oder eine eigene Domain verbinden.
+**Zugriffsschutz:** In Vercel ist «Standard Protection» eingestellt. Die Produktionsadresse ist öffentlich; Vorschau- und einzelne Deployment-Adressen verlangen ein Vercel-Login. Eine eigene Domain wird unter *Project → Settings → Domains* verbunden.
