@@ -1,7 +1,7 @@
 /* ==========================================================================
    Piazza Meilenstein – Gestaltung
    Weiss als Grund, Cappuccino für warme Flächen und Details, gedecktes Olivgrün für Akzente.
-   Überschriften: Bodoni Moda · Text: Jost
+   Überschriften: Cormorant Garamond · Text: Jost
    ========================================================================== */
 
 :root {
@@ -20,7 +20,8 @@
   --olive-wash: #edf0e8;
   --error: #8c2f1e;
 
-  --font-serif: var(--font-bodoni), "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-display: var(--font-serif);
   --font-sans: var(--font-jost), Jost, Futura, "Century Gothic", system-ui, sans-serif;
 
   --container: 1320px;
@@ -98,7 +99,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-serif);
-  font-weight: 420;
+  font-weight: 500;
   color: var(--espresso);
   margin: 0;
   line-height: 1.06;
@@ -412,6 +413,49 @@ textarea {
 
 .site-header.is-scrolled {
   border-color: var(--line);
+}
+
+/* Startseite: Der Kopf liegt transparent über dem Bild und wird beim Scrollen weiss */
+.site-header--home {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.site-header.is-over {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-color: transparent;
+}
+
+.site-header .brand img {
+  transition: filter 0.4s var(--ease);
+}
+
+.site-header.is-over .brand img {
+  filter: brightness(0) invert(1);
+}
+
+.site-header.is-over .nav-link,
+.site-header.is-over .nav-link[aria-current="page"],
+.site-header.is-over .menu-toggle {
+  color: #fff;
+}
+
+.site-header.is-over .nav-link::after {
+  background: #fff;
+}
+
+.site-header.is-over .btn--secondary {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.75);
+}
+
+.site-header.is-over .btn--secondary:hover {
+  background: #fff;
+  color: var(--espresso);
+  border-color: #fff;
 }
 
 .header-inner {
@@ -805,30 +849,45 @@ a:hover .figure__img,
   }
 }
 
-/* ---------- Startseite: Hero ---------- */
+/* ---------- Startseite: Hero (Bild über die ganze Fläche, Text im Bild) ---------- */
 .hero {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  background: var(--paper);
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: calc(100svh - var(--actionbar-h));
+  overflow: hidden;
+  isolation: isolate;
+  background: #1d1511;
+  color: #fff;
 }
 
 .hero__media {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
-  background: var(--latte);
-  height: min(50svh, 520px);
-  min-height: 300px;
 }
 
 .hero__slide {
   position: absolute;
   inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.hero__slide[data-state="active"] {
+  opacity: 1;
+}
+
+.hero__slide[data-state="idle"] {
+  transition: none;
 }
 
 .hero__slide img {
   object-fit: cover;
   object-position: var(--focus-narrow, var(--focus, 50% 50%));
+  transform-origin: var(--origin, 50% 50%);
 }
 
 @media (min-width: 640px) {
@@ -837,152 +896,350 @@ a:hover .figure__img,
   }
 }
 
-/* Überblendung erst, wenn die weiteren Bilder geladen wurden (siehe HeroMoreSlides) */
+/* Hochformat-Ausschnitt ist bereits auf das Motiv zugeschnitten */
+@media (max-aspect-ratio: 4/5) {
+  .hero__slide[data-portrait="true"] img {
+    object-position: 50% 50%;
+  }
+}
+
+/* Abdunklung nur wo nötig: oben für die Navigation, unten und links für den Text */
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgb(24 17 13 / 0.55) 0%, rgb(24 17 13 / 0) 26%),
+    linear-gradient(to bottom, rgb(24 17 13 / 0) 36%, rgb(24 17 13 / 0.55) 64%, rgb(24 17 13 / 0.9) 100%),
+    linear-gradient(to right, rgb(24 17 13 / 0.5) 0%, rgb(24 17 13 / 0) 58%);
+}
+
+/* Eröffnung: Lamellen öffnen sich von der Mitte her */
+.hero__slats {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  pointer-events: none;
+}
+
+.hero__slats > span {
+  display: block;
+  transform-origin: 50% 50%;
+  background: linear-gradient(90deg, #22180f 0%, #33251c 45%, #22180f 100%);
+}
+
+html:not(.intro) .hero__slats,
+.hero__slats[data-done="true"] {
+  display: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-top: calc(var(--header-h) + 2.5rem);
+  padding-bottom: clamp(1.75rem, 5vh, 3.5rem);
+}
+
+/* Breite Bildschirme: Text rechts, damit links das Motiv (z. B. der rote Ferrari) frei bleibt */
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+  .hero__content {
+    width: min(46rem, 52%);
+    margin-left: auto;
+  }
+
+  .hero .hero__title {
+    max-width: none;
+    font-size: clamp(3.4rem, 0.9rem + 5.5vw, 7.4rem);
+  }
+
+  .hero__shade {
+    background:
+      linear-gradient(to bottom, rgb(24 17 13 / 0.55) 0%, rgb(24 17 13 / 0) 26%),
+      linear-gradient(to bottom, rgb(24 17 13 / 0) 40%, rgb(24 17 13 / 0.45) 70%, rgb(24 17 13 / 0.88) 100%),
+      linear-gradient(to left, rgb(24 17 13 / 0.62) 0%, rgb(24 17 13 / 0.3) 38%, rgb(24 17 13 / 0) 60%);
+  }
+}
+
+/* Hochformat (Smartphone): Text oben im Bild, darunter bleibt das Motiv sichtbar */
+@media (max-aspect-ratio: 4/5) {
+  .hero {
+    align-items: stretch;
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(var(--header-h) + 1.75rem);
+  }
+
+  .hero .hero__info {
+    margin-top: auto;
+  }
+
+  .hero__shade {
+    background:
+      linear-gradient(to bottom, rgb(24 17 13 / 0.78) 0%, rgb(24 17 13 / 0.45) 38%, rgb(24 17 13 / 0) 58%),
+      linear-gradient(to top, rgb(24 17 13 / 0.8) 0%, rgb(24 17 13 / 0) 24%);
+  }
+}
+
+.hero__title {
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 1.5rem + 7.4vw, 8.6rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  color: #fff;
+}
+
+.hero__title > span {
+  display: block;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: clamp(2.25rem, 5vh, 3rem);
+}
+
+.btn--on-image {
+  background: rgb(24 17 13 / 0.22);
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.7);
+}
+
+.btn--on-image:hover {
+  background: #fff;
+  color: var(--espresso);
+  border-color: #fff;
+}
+
+.hero__link {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 0.55);
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 0.3s var(--ease);
+}
+
+.hero__link:hover {
+  text-decoration-color: #fff;
+}
+
+.hero__link--cta {
+  margin-left: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.hero__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-top: clamp(2.5rem, 7vh, 3.5rem);
+  padding-top: 1.1rem;
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+  font-size: 0.92rem;
+  color: rgb(255 255 255 / 0.88);
+}
+
+.hero__where {
+  margin: 0;
+}
+
+.hero__sep {
+  margin: 0 0.7rem;
+  color: var(--crema);
+}
+
+.hero__controls {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.hero__dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero__dot {
+  padding: 0.85rem 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.hero__dot > span {
+  position: relative;
+  display: block;
+  width: 2.25rem;
+  height: 2px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.3);
+}
+
+.hero__dot i {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.hero__dot[aria-current="true"] i {
+  transform: scaleX(1);
+}
+
+.hero__toggle {
+  padding: 0.5rem 0;
+  border: 0;
+  background: none;
+  font-size: 0.86rem;
+  color: rgb(255 255 255 / 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 0.4);
+  text-underline-offset: 0.3em;
+  cursor: pointer;
+}
+
+.hero__toggle:hover {
+  color: #fff;
+  text-decoration-color: #fff;
+}
+
+.hero :focus-visible {
+  outline-color: #fff;
+}
+
+@media (max-width: 559px) {
+  .hero__actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .hero__link--cta {
+    margin: 0.4rem 0 0;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide {
-    opacity: 0;
-    animation: hero-fade 24s linear infinite both;
+  /* Langsame Kamerafahrt auf dem sichtbaren Bild */
+  /* feste Werte in den Keyframes, damit die Grafikkarte die Bewegung übernehmen kann */
+  .hero__slide:is([data-state="active"], [data-state="leaving"]) img {
+    animation: hero-drift-1 10.6s linear both;
   }
 
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide img {
-    animation: hero-drift 24s linear infinite both;
+  .hero__slide:nth-child(4n + 2):is([data-state="active"], [data-state="leaving"]) img {
+    animation-name: hero-drift-2;
   }
 
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide:nth-child(1),
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide:nth-child(1) img {
-    animation-delay: -1.2s;
+  .hero__slide:nth-child(4n + 3):is([data-state="active"], [data-state="leaving"]) img {
+    animation-name: hero-drift-3;
   }
 
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide:nth-child(2),
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide:nth-child(2) img {
-    animation-delay: 6.8s;
+  .hero__slide:nth-child(4n + 4):is([data-state="active"], [data-state="leaving"]) img {
+    animation-name: hero-drift-4;
   }
 
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide:nth-child(3),
-  .hero__media:has(.hero__slide:nth-child(2)) .hero__slide:nth-child(3) img {
-    animation-delay: 14.8s;
+  @keyframes hero-drift-1 {
+    from {
+      transform: scale(1.12) translate3d(-1.4%, 0.8%, 0);
+    }
+    to {
+      transform: scale(1.02);
+    }
   }
 
-  @keyframes hero-fade {
-    0% {
+  @keyframes hero-drift-2 {
+    from {
+      transform: scale(1.12) translate3d(1.2%, -0.6%, 0);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes hero-drift-3 {
+    from {
+      transform: scale(1.12) translate3d(-0.8%, -0.9%, 0);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes hero-drift-4 {
+    from {
+      transform: scale(1.12) translate3d(1.1%, 0.7%, 0);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+
+  html.intro .hero__slats > span {
+    animation: hero-slat 1.25s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+    animation-delay: calc(var(--i) * 55ms + 0.12s);
+  }
+
+  @keyframes hero-slat {
+    from {
+      transform: scaleX(1);
+    }
+    to {
+      transform: scaleX(0);
+    }
+  }
+
+  /* Text steigt nacheinander auf */
+  .hero-reveal {
+    animation: hero-rise 1s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+    animation-delay: var(--d, 0s);
+  }
+
+  html.intro .hero-reveal {
+    animation-delay: calc(var(--d, 0s) + 0.75s);
+  }
+
+  @keyframes hero-rise {
+    from {
       opacity: 0;
-    }
-    5% {
-      opacity: 1;
-    }
-    38.3% {
-      opacity: 1;
-    }
-    43.3% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
+      transform: translate3d(0, 1.25rem, 0);
     }
   }
 
-  @keyframes hero-drift {
-    0% {
-      transform: scale(1);
+  .hero__dot[data-running="true"] i {
+    animation: hero-progress 8s linear both;
+  }
+
+  @keyframes hero-progress {
+    from {
+      transform: scaleX(0);
     }
-    43.3% {
-      transform: scale(1.06);
-    }
-    100% {
-      transform: scale(1.06);
+    to {
+      transform: scaleX(1);
     }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__slide:not(:first-child) {
+  .hero__slats {
     display: none;
   }
-}
 
-.hero__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2.4rem var(--gutter) 3.5rem;
-}
-
-.hero__content .t-display {
-  max-width: 11ch;
-}
-
-.hero__text {
-  margin-top: 1.5rem;
-  max-width: 34rem;
-  font-size: clamp(1.1rem, 1.02rem + 0.35vw, 1.28rem);
-  line-height: 1.62;
-}
-
-.hero__note {
-  margin-top: 2.2rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-  max-width: 30rem;
-  font-size: 0.92rem;
-  color: var(--muted);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero__content > * {
-    animation: rise 1.1s var(--ease-out) both;
-  }
-
-  .hero__content > *:nth-child(2) {
-    animation-delay: 0.08s;
-  }
-
-  .hero__content > *:nth-child(3) {
-    animation-delay: 0.16s;
-  }
-
-  .hero__content > *:nth-child(4) {
-    animation-delay: 0.24s;
-  }
-
-  .hero__content > *:nth-child(5) {
-    animation-delay: 0.32s;
-  }
-
-  @keyframes rise {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 18px, 0);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-}
-
-@media (max-width: 559px) {
-  .hero .btn-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-@media (min-width: 900px) {
-  .hero {
-    grid-template-columns: minmax(0, 5.4fr) minmax(0, 6.6fr);
-    min-height: calc(100svh - var(--header-h));
-    max-height: 980px;
-  }
-
-  .hero__content {
-    order: -1;
-    padding: clamp(3rem, 6vh, 5rem) clamp(2rem, 4vw, 4.5rem) clamp(3rem, 6vh, 5rem)
-      max(var(--gutter), calc((100vw - var(--container)) / 2));
-  }
-
-  .hero__media {
-    height: auto;
-    min-height: 560px;
+  .hero__slide {
+    transition: none;
   }
 }
 
@@ -1621,7 +1878,7 @@ a:hover .figure__img,
   gap: 1rem;
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 420;
+  font-weight: 500;
   font-size: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
   line-height: 1.25;
   color: var(--olive);
@@ -1667,8 +1924,8 @@ a:hover .figure__img,
 .dish__name {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.18rem, 1.1rem + 0.3vw, 1.32rem);
-  font-weight: 450;
+  font-size: clamp(1.28rem, 1.18rem + 0.35vw, 1.44rem);
+  font-weight: 600;
   line-height: 1.25;
   color: var(--espresso);
   letter-spacing: 0;
@@ -1953,8 +2210,8 @@ a:hover .figure__img,
 .wine__name {
   display: block;
   font-family: var(--font-serif);
-  font-size: 1.12rem;
-  font-weight: 450;
+  font-size: 1.22rem;
+  font-weight: 600;
   line-height: 1.3;
   color: var(--espresso);
 }

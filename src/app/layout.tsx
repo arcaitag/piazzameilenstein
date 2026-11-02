@@ -7,14 +7,23 @@ import ActionBar from "@/components/ActionBar";
 import RevealObserver from "@/components/RevealObserver";
 import { allowIndexing, site } from "@/content/site";
 
-const bodoni = localFont({
+// Überschriften: Cormorant Garamond – elegant und auch in grossen Grössen gut lesbar
+const cormorant = localFont({
   src: [
-    { path: "../../node_modules/@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-standard-normal.woff2", style: "normal", weight: "400 900" },
-    { path: "../../node_modules/@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-standard-italic.woff2", style: "italic", weight: "400 900" },
+    {
+      path: "../../node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2",
+      style: "normal",
+      weight: "300 700",
+    },
+    {
+      path: "../../node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-italic.woff2",
+      style: "italic",
+      weight: "300 700",
+    },
   ],
-  variable: "--font-bodoni",
+  variable: "--font-cormorant",
   display: "swap",
-  fallback: ["Didot", "Georgia", "serif"],
+  fallback: ["Garamond", "Georgia", "serif"],
 });
 
 const jost = localFont({
@@ -52,7 +61,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de-CH" className={`${bodoni.variable} ${jost.variable}`} suppressHydrationWarning>
+    <html lang="de-CH" className={`${cormorant.variable} ${jost.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>

@@ -13,6 +13,8 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Auf der Startseite liegt der Kopf transparent über dem Bild, bis gescrollt wird
+  const isHome = pathname === "/";
   const toggleRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +73,11 @@ export default function Header() {
 
   return (
     <>
-      <header className={`site-header${scrolled || open ? " is-scrolled" : ""}`}>
+      <header
+        className={`site-header${isHome ? " site-header--home" : ""}${isHome && !scrolled && !open ? " is-over" : ""}${
+          scrolled || open ? " is-scrolled" : ""
+        }`}
+      >
         <div className="container header-inner">
           <Link href="/" className="brand" aria-label="Piazza Meilenstein – zur Startseite">
             {/* eslint-disable-next-line @next/next/no-img-element */}

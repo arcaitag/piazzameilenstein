@@ -10,6 +10,10 @@ import capreseOel from "@/assets/photos/caprese-olivenoel.jpg";
 import lamm from "@/assets/photos/lammkoteletts.jpg";
 import tisch from "@/assets/photos/tisch-gedeckt.jpg";
 import bar from "@/assets/photos/bar-cocktails.jpg";
+// Hochformat-Ausschnitte für das Startbild auf dem Smartphone
+import innenraumWeinklimaHoch from "@/assets/photos/hoch/innenraum-weinklima-hoch.jpg";
+import innenraumFerrariHoch from "@/assets/photos/hoch/innenraum-ferrari-hoch.jpg";
+import terrasseHoch from "@/assets/photos/hoch/terrasse-hoch.jpg";
 
 export type Photo = {
   src: StaticImageData;
@@ -18,23 +22,28 @@ export type Photo = {
   focus: string;
   /** Fokuspunkt für schmale Hochformat-Ausschnitte (Smartphone) */
   focusNarrow?: string;
+  /** eigener Hochformat-Ausschnitt (2:3) für das Startbild auf schmalen Bildschirmen */
+  portrait?: StaticImageData;
 };
 
 export const photos = {
   innenraum: {
     src: innenraumWeinklima,
+    portrait: innenraumWeinklimaHoch,
     alt: "Gedeckte Tische mit roten Servietten und Kerzen vor beleuchteten Weinklimaschränken, darüber hängendes Grün und geflochtene Leuchten",
     focus: "50% 50%",
     focusNarrow: "40% 55%",
   },
   ferrari: {
     src: innenraumFerrari,
+    portrait: innenraumFerrariHoch,
     alt: "Der grosse Gastraum mit Bambusstämmen und begrünter Decke, vorne ein roter Ferrari F40 auf rotem Teppich",
     focus: "50% 55%",
     focusNarrow: "36% 58%",
   },
   terrasse: {
     src: terrasse,
+    portrait: terrasseHoch,
     alt: "Terrasse mit gedeckten Tischen unter grossen hellen Sonnenschirmen, im Vordergrund die Zweige eines Olivenbaums",
     focus: "45% 60%",
     focusNarrow: "34% 62%",

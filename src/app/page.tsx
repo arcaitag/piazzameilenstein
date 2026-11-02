@@ -1,11 +1,21 @@
 import Link from "next/link";
-import HeroSlideshow from "@/components/HeroSlideshow";
+import { getImageProps } from "next/image";
+import type { CSSProperties } from "react";
+import Hero from "@/components/Hero";
 import Figure from "@/components/Figure";
 import { ArrowLink, CtaBand } from "@/components/Blocks";
 import { Arrow } from "@/components/Icons";
 import { pizzaCount } from "@/content/menu";
 import { site } from "@/content/site";
-import type { PhotoKey } from "@/content/images";
+import { photos, type PhotoKey } from "@/content/images";
+import { HERO_QUALITY, HERO_SIZES, LANDSCAPE_MEDIA, PORTRAIT_MEDIA } from "@/lib/hero";
+
+// Erstes Bild: «11 – Meilenstein 2.0-53» (der rote Ferrari), danach ruhiger Wechsel
+const HERO_SLIDES: PhotoKey[] = ["ferrari", "innenraum", "terrasse"];
+
+// Eröffnung nur beim ersten Aufruf der Startseite pro Tab (läuft vor dem ersten Zeichnen)
+const INTRO_SCRIPT =
+  "try{if(!sessionStorage.getItem('pm-intro')){document.documentElement.classList.add('intro');sessionStorage.setItem('pm-intro','1')}}catch(e){}";
 
 const chapters: { num: string; title: string; text: string; href: string; image: PhotoKey }[] = [
   {
@@ -38,6 +48,31 @@ const chapters: { num: string; title: string; text: string; href: string; image:
   },
 ];
 
+/** Erstes Startbild früh laden – auf dem Smartphone den Hochformat-Ausschnitt, sonst das Querformat */
+function HeroPreload() {
+  const first = photos[HERO_SLIDES[0]];
+  const common = { alt: "", fill: true, quality: HERO_QUALITY } as const;
+  const land = getImageProps({ ...common, src: first.src, sizes: HERO_SIZES }).props;
+  const port = "portrait" in first && first.portrait
+    ? getImageProps({ ...common, src: first.portrait, sizes: "100vw" }).props
+    : null;
+  return (
+    <>
+      {port ? (
+        <link rel="preload" as="image" imageSrcSet={port.srcSet} imageSizes="100vw" media={PORTRAIT_MEDIA} fetchPriority="high" />
+      ) : null}
+      <link
+        rel="preload"
+        as="image"
+        imageSrcSet={land.srcSet}
+        imageSizes={HERO_SIZES}
+        media={port ? LANDSCAPE_MEDIA : undefined}
+        fetchPriority="high"
+      />
+    </>
+  );
+}
+
 function JsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -68,33 +103,37 @@ export default function HomePage() {
     <>
       <JsonLd />
 
-      <section className="hero" aria-labelledby="hero-title">
-        <HeroSlideshow slides={["innenraum", "terrasse", "ferrari"]} />
-        <div className="hero__content">
-          <span className="eyebrow">{site.tagline}</span>
-          <h1 id="hero-title" className="t-display">
-            Willkommen auf der Piazza.
-          </h1>
-          <p className="hero__text">
-            Hausgemachte Pizza und Pasta, Steaks vom Grill und eine Weinkarte von Prosecco bis Sassicaia – drinnen unter
-            einem Dach aus Grün, draussen unter grossen Sonnenschirmen.
-          </p>
-          <div className="btn-row">
-            <Link href="/reservation" className="btn btn--primary">
-              Tisch reservieren <Arrow />
+      <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
+      <HeroPreload />
+      <Hero
+        slides={HERO_SLIDES}
+        info={
+          <>
+            Ristorante · Pizzeria · Bisteccheria in {site.city}
+            <span className="hero__sep" aria-hidden="true">
+              /
+            </span>
+            <Link href="/kontakt" className="hero__link">
+              Kontakt &amp; Anreise
             </Link>
-            <Link href="/speisekarte" className="btn btn--secondary">
-              Speisekarte ansehen
-            </Link>
-          </div>
-          <p className="hero__note">
-            Feier oder Firmenessen geplant?{" "}
-            <Link href="/anlaesse" className="text-link">
-              Anlass anfragen
-            </Link>
-          </p>
+          </>
+        }
+      >
+        <h1 id="hero-title" className="hero__title hero-reveal">
+          <span>Willkommen</span> <span>auf der Piazza.</span>
+        </h1>
+        <div className="hero__actions hero-reveal" style={{ "--d": "260ms" } as CSSProperties}>
+          <Link href="/reservation" className="btn btn--primary">
+            Tisch reservieren <Arrow />
+          </Link>
+          <Link href="/speisekarte" className="btn btn--on-image">
+            Speisekarte ansehen
+          </Link>
+          <Link href="/anlaesse#anfrage" className="hero__link hero__link--cta">
+            Anlass anfragen
+          </Link>
         </div>
-      </section>
+      </Hero>
 
       <section className="section" aria-labelledby="intro-title">
         <div className="container intro-split">
