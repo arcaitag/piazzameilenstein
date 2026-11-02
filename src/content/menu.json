@@ -1,0 +1,1490 @@
+{
+ "sections": [
+  {
+   "id": "antipasti",
+   "nav": "Antipasti",
+   "kicker": "Vorspeisen",
+   "title": "Antipasti",
+   "blocks": [
+    {
+     "type": "group",
+     "title": null,
+     "items": [
+      {
+       "name": "Pomodoro e Mozzarella «Caprese»",
+       "desc": "Bufala Mozzarella mit Tomaten",
+       "price": "18.50"
+      },
+      {
+       "name": "Bufala con Crudo di Parma",
+       "desc": "Bufala Mozzarella mit Parmaschinken[IT]",
+       "price": "21.50"
+      },
+      {
+       "name": "Burrata di Andria DOP con Prosciutto[IT] Crudo di Parma",
+       "desc": "Burrata di Andria mit Parmaschinken",
+       "price": "28.50"
+      },
+      {
+       "name": "Vitello Tonnato «Classic»[CH & FAO 71]",
+       "variants": [
+        {
+         "label": "Vorspeise",
+         "price": "24.50"
+        },
+        {
+         "label": "Hauptgang",
+         "price": "29.50"
+        }
+       ],
+       "variantStyle": "stack"
+      },
+      {
+       "name": "Carpaccio di Manzo[CH]",
+       "variants": [
+        {
+         "label": "Vorspeise",
+         "price": "28.00"
+        },
+        {
+         "label": "Hauptgang",
+         "price": "32.00"
+        }
+       ],
+       "variantStyle": "stack"
+      },
+      {
+       "name": "Tatar di Manzo[CH]",
+       "variants": [
+        {
+         "label": "Vorspeise",
+         "price": "28.00"
+        },
+        {
+         "label": "Hauptgang",
+         "price": "32.00"
+        }
+       ],
+       "variantStyle": "stack"
+      },
+      {
+       "name": "Bruschette al Pomodoro",
+       "desc": "Geröstete Brotscheiben · Tomaten · Zwiebeln · Knoblauch · Basilikum · Olivenöl",
+       "price": "14.50"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "insalate",
+   "nav": "Insalate",
+   "kicker": "Salate",
+   "title": "La Insalata",
+   "blocks": [
+    {
+     "type": "group",
+     "title": null,
+     "items": [
+      {
+       "name": "Insalata Verde",
+       "desc": "Grüner Salat",
+       "price": "8.50"
+      },
+      {
+       "name": "Insalata Mista",
+       "desc": "Gemischter Salat",
+       "price": "11.50"
+      },
+      {
+       "name": "Insalata di Rucola, Parmigiano e Pomodorini",
+       "desc": "Rucolasalat mit Parmesan und Cherrytomaten",
+       "price": "11.50"
+      },
+      {
+       "name": "Melone Estivo",
+       "desc": "Melone mit Parmaschinken[IT]",
+       "price": "18.00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "minestre",
+   "nav": "Minestre",
+   "kicker": "Suppen",
+   "title": "Minestre",
+   "blocks": [
+    {
+     "type": "group",
+     "title": null,
+     "items": [
+      {
+       "name": "Tagessuppe",
+       "price": "9.50"
+      },
+      {
+       "name": "Zuppa di Pomodoro",
+       "desc": "Tomatensuppe mit frischem Basilikum und Sahnehaube",
+       "price": "9.50"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "primi",
+   "nav": "Primi",
+   "kicker": "Pasta & Risotto",
+   "title": "Primi Piatti",
+   "blocks": [
+    {
+     "type": "group",
+     "title": "I nostri classici",
+     "items": [
+      {
+       "name": "Spaghetti al Pomodoro Fresco e Basilico",
+       "desc": "Frische Tomatensauce und Basilikum",
+       "price": "21.50"
+      },
+      {
+       "name": "Spaghetti alla Carbonara Classica",
+       "desc": "Guanciale[CH] und Käse",
+       "price": "25.50"
+      },
+      {
+       "name": "Orecchiette Cinque Pi",
+       "desc": "Rahm · Tomaten · Parmesan und Petersilie",
+       "price": "24.50"
+      },
+      {
+       "name": "Penne all'Arrabbiata",
+       "desc": "Peperoni · Chili · Tomaten · Basilikum und Parmesan",
+       "price": "22.50"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Per i veri intenditori … Pasta di nostra produzione",
+     "items": [
+      {
+       "name": "Paccheri del Calabrese Incazzato",
+       "desc": "Frische Tomatensauce · Basilikum · Chili · Knoblauch",
+       "price": "25.50"
+      },
+      {
+       "name": "Lasagne al Forno",
+       "desc": "Mit Schweizer Rindsgehacktem[CH]",
+       "price": "24.00"
+      },
+      {
+       "name": "Spaghetti ai Frutti di Mare",
+       "desc": "Meeresfrüchte[IT] · Tomate · Knoblauch · Petersilie und Olivenöl",
+       "price": "29.50"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Pasta & Risotto",
+     "items": [
+      {
+       "name": "Maccheroncini «del Figo»",
+       "desc": "Parmaschinken[IT] · Burrata · Rucola",
+       "price": "27.50"
+      },
+      {
+       "name": "Taglierini di Fra Diavolo",
+       "desc": "Knoblauch · Chili · Crevetten[VT] · frische Tomatensauce",
+       "price": "28.50"
+      },
+      {
+       "name": "Pappardelle alla Checca",
+       "desc": "Steinpilze · Kalb[CH] · Rahm",
+       "price": "32.00"
+      },
+      {
+       "name": "Spaghetti alle Vongole",
+       "desc": "Frische Venusmuscheln · Cherrytomaten · Knoblauch · Petersilie",
+       "price": "28.50"
+      },
+      {
+       "name": "Tagliatelle alla Funghi Porcini Tartufati",
+       "desc": "Eiernudeln mit Steinpilzen · Tomaten · Weisstrüffelöl",
+       "price": "29.50"
+      },
+      {
+       "name": "Risotto dell'Adriatico",
+       "desc": "Weissweinrisotto mit verschiedenen Meeresfrüchten · Fisch · Tomaten",
+       "price": "32.50"
+      },
+      {
+       "name": "Risotto ai Funghi Porcini",
+       "desc": "Weissweinrisotto mit Steinpilzen",
+       "price": "28.50"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "secondi",
+   "nav": "Secondi",
+   "kicker": "Hauptgerichte",
+   "title": "Secondi Piatti",
+   "blocks": [
+    {
+     "type": "group",
+     "title": "Di Carne",
+     "items": [
+      {
+       "name": "Saltimbocca alla Romana",
+       "desc": "Kalbsschnitzel[CH] mit Parmaschinken[IT] und frischem Salbei, begleitet von Parmigiano Reggiano",
+       "price": "42.50"
+      },
+      {
+       "name": "Scaloppine al Limone",
+       "desc": "Kalbsschnitzel[CH] an Zitronensauce",
+       "price": "42.50"
+      },
+      {
+       "name": "Costolette d'Agnello al Rosmarino",
+       "desc": "Lammkotelett[AUS], serviert mit Bratkartoffeln und Gemüse",
+       "price": "44.50"
+      },
+      {
+       "name": "Costata di Vitello alla Griglia",
+       "desc": "Kalbskotelett[CH], serviert mit Bratkartoffeln und Gemüse",
+       "price": "57.50",
+       "tag": "ca. 350 g"
+      },
+      {
+       "name": "Piatto Fit",
+       "desc": "Grosser gemischter Salatteller mit Pouletbrust (zusätzliche Beilage nicht inbegriffen)",
+       "price": "29.50"
+      },
+      {
+       "name": "Tagliata di Manzo «Piazza»",
+       "desc": "Rindsentrecôte vom Grill, in Scheiben geschnitten · garniert mit Rucola · Cherrytomaten · Grana Padano DOP",
+       "price": "42.50"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Di Pesce",
+     "items": [
+      {
+       "name": "Riesencrevetten[VT]",
+       "desc": "An frischer Knoblauch-Kräuter-Sauce, dazu Spinat und Risotto",
+       "price": "42.00"
+      },
+      {
+       "name": "Spiedone di Gamberoni alla Griglia",
+       "desc": "Crevettenspiess[VT], serviert mit Bratkartoffeln und Gemüse",
+       "price": "44.50"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "title": "Jedes Hauptgericht inkl. 1 Beilage",
+     "rows": [
+      {
+       "text": "Risotto · Tagliatelle · Saisongemüse · Grillgemüse · Bratkartoffeln · Spinat"
+      },
+      {
+       "text": "Jede weitere Beilage",
+       "price": "6.00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pizze",
+   "nav": "Pizze",
+   "kicker": "Le Pizze",
+   "title": "Pizze",
+   "blocks": [
+    {
+     "type": "group",
+     "title": "Le Solite Pizze · Die Klassiker",
+     "items": [
+      {
+       "name": "Margherita",
+       "desc": "Tomaten · Mozzarella · Oregano · frischer Basilikum",
+       "price": "18.50"
+      },
+      {
+       "name": "Lacrima",
+       "desc": "Tomaten · Mozzarella · Zwiebeln · Peperoncino",
+       "price": "17.50"
+      },
+      {
+       "name": "Napoli",
+       "desc": "Tomaten · Mozzarella · Kapern · Sardellen[IT]",
+       "price": "21.50"
+      },
+      {
+       "name": "Prosciutto",
+       "desc": "Tomaten · Mozzarella · Schinken[CH] · Oregano",
+       "price": "21.50"
+      },
+      {
+       "name": "Ai Funghi",
+       "desc": "Tomaten · Mozzarella · Champignons · Oregano",
+       "price": "21.50"
+      },
+      {
+       "name": "Dell'Orto",
+       "desc": "Tomaten · Mozzarella · grilliertes Gemüse",
+       "price": "23.50"
+      },
+      {
+       "name": "Alla Livornese",
+       "desc": "Tomaten · Mozzarella · Thunfisch · Zwiebeln",
+       "price": "22.50"
+      },
+      {
+       "name": "Capricciosa",
+       "desc": "Tomaten · Mozzarella · Schinken[CH] · Champignons · Artischocken · Oliven",
+       "price": "23.50"
+      },
+      {
+       "name": "Hawaii",
+       "desc": "Tomaten · Mozzarella · Ananas · Schinken[CH] · Oregano",
+       "price": "22.50"
+      },
+      {
+       "name": "Rustica",
+       "desc": "Tomaten · Mozzarella · Speck[CH] · Zwiebeln · Knoblauch",
+       "price": "23.50"
+      },
+      {
+       "name": "Quattro Formaggi",
+       "desc": "Tomaten · Mozzarella · 4 Käsesorten",
+       "price": "22.50"
+      },
+      {
+       "name": "Quattro Stagioni",
+       "desc": "Tomaten · Mozzarella · Schinken[CH] · Artischocken · Peperoni · Champignons · Oliven",
+       "price": "24.50"
+      },
+      {
+       "name": "Calabrese",
+       "desc": "Tomaten · Mozzarella · pikante Salami[CH] · Oregano",
+       "price": "22.50"
+      },
+      {
+       "name": "Calzone",
+       "desc": "Tomaten · Mozzarella · Schinken[CH] · Champignons · Ei · Pesto · Parmesan",
+       "price": "23.50"
+      },
+      {
+       "name": "Ai 3 Gusti",
+       "desc": "Tomaten · Mozzarella · pikante Salami[CH] · Champignons · Schinken[CH]",
+       "price": "24.50"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Le Pizze Gustose · Die Spezialitäten",
+     "items": [
+      {
+       "name": "Parma e Rucola",
+       "desc": "Tomaten · Mozzarella · Parmaschinken[IT] · Rucola",
+       "price": "24.50"
+      },
+      {
+       "name": "Donna Mafalda",
+       "desc": "Tomaten · Mozzarella · Mascarpone · Parmaschinken[IT]",
+       "price": "22.50"
+      },
+      {
+       "name": "Regina",
+       "desc": "Tomaten · Mozzarella · Rucola · Parmaschinken[IT] · Cherrytomaten · Parmesansplitter",
+       "price": "25.50"
+      },
+      {
+       "name": "Buongustaio",
+       "desc": "Tomaten · Mozzarella · Gorgonzola · Speck[CH] · Zwiebeln · Steinpilze",
+       "price": "24.50"
+      },
+      {
+       "name": "Al Colesterolo",
+       "desc": "Tomaten · Mozzarella · Salsiccia[CH] · Gorgonzola · Taleggio · Speck[CH]",
+       "price": "24.50"
+      },
+      {
+       "name": "Miss Italia",
+       "desc": "Tomaten · Mozzarella · Cherrytomaten · Bufala Mozzarella · Rucola",
+       "price": "26.50"
+      },
+      {
+       "name": "Gran Ducato",
+       "desc": "Tomaten · Mozzarella · Cherrytomaten · Bresaola[CH] · Trüffel · Parmesansplitter · Champignons · Oregano",
+       "price": "29.50"
+      },
+      {
+       "name": "Terra e Mare",
+       "desc": "Tomaten · Mozzarella · Steinpilze · frische Meeresfrüchte[IT]",
+       "price": "27.50"
+      },
+      {
+       "name": "Il Principe",
+       "desc": "Tomaten · Mozzarella · Steinpilze · Bufala Mozzarella · Chili",
+       "price": "27.50"
+      },
+      {
+       "name": "Trentina",
+       "desc": "Tomaten · Mozzarella · Speck[CH] · Gorgonzola",
+       "price": "24.50"
+      },
+      {
+       "name": "Mari del Nord",
+       "desc": "Tomaten · Mozzarella · Lachs[NOR] · Kapern · Zwiebeln",
+       "price": "24.50"
+      },
+      {
+       "name": "Mea Culpa",
+       "desc": "Tomaten · Mozzarella · Salsiccia[CH] · Peperoni · Oliven",
+       "price": "23.50"
+      },
+      {
+       "name": "Illusione",
+       "desc": "Tomaten · Mozzarella · Cherrytomaten · Bufala Mozzarella · Sardellen[IT] · Basilikum",
+       "price": "26.50"
+      },
+      {
+       "name": "Diva",
+       "desc": "Tomaten · Mozzarella · Scamorza Affumicata · Crevetten[VT] · Champignons · schwarzer Trüffel",
+       "price": "28.50"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Le Pizze Bianche · Ohne Tomatensauce",
+     "items": [
+      {
+       "name": "La Mortazza",
+       "desc": "Mozzarella · Mortadella[IT] · Burrata · Pistazien",
+       "price": "26.50"
+      },
+      {
+       "name": "Delizia",
+       "desc": "Mozzarella · Salsiccia[CH] · Scamorza Affumicata · Auberginen · Cherrytomaten",
+       "price": "26.50"
+      },
+      {
+       "name": "Delicata",
+       "desc": "Mozzarella · Zucchini · Crevetten[VT] · Parmesansplitter · Cherrytomaten",
+       "price": "26.50"
+      },
+      {
+       "name": "Marchese",
+       "desc": "Cherrytomaten · Mozzarella · Radicchio Rosso · Balsamico-Essig · Gorgonzola",
+       "price": "23.50"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "title": "Extras zu jeder Pizza",
+     "rows": [
+      {
+       "name": "Senza Glutine",
+       "text": "glutenfreie Pizza",
+       "price": "+ 5.00"
+      },
+      {
+       "name": "Rucola",
+       "text": "",
+       "price": "+ 4.50"
+      },
+      {
+       "name": "Mozzarella di Bufala",
+       "text": "",
+       "price": "+ 6.50"
+      },
+      {
+       "name": "Weisstrüffelöl",
+       "text": "",
+       "price": "+ 3.50"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bisteccheria",
+   "nav": "Bisteccheria",
+   "kicker": "Bisteccheria",
+   "title": "Das besondere Fleisch",
+   "subtitle": "The Meat Beef Dry Aged · U.S. Gourmet Beef Dry Aged",
+   "blocks": [
+    {
+     "type": "intro",
+     "lead": "Es versetzt Fleischkenner in Ekstase: Dry Aged Beef, das trocken gelagerte Rind, liefert die besten Steaks der Welt. In den USA sind die am Knochen gereiften Rinderrücken schon seit Jahrzehnten Kult. Jetzt entdecken auch die Schweizer die alte Metzgerkunst wieder.",
+     "paragraphs": [
+      "Unter Beef oder Rindfleisch versteht man generell junge, noch nicht ausgewachsene männliche und weibliche Tiere. Rinder, welche qualitativ hochstehendes Fleisch liefern, sind zwischen 14 und 30 Monate alt und werden in den US-Staaten mit Mais und Weizen aufgezogen. Unser Restaurant wählt Tiere nach strengen Kriterien aus, sodass nur die besten Fleischstücke weiterverarbeitet werden. Dabei achten wir in Zusammenarbeit mit den Produzenten und Lieferanten insbesondere auf ausschliesslich weibliche Tiere, die Haltung, das Alter, den interzellulären Fettanteil (Marmorierung) und die Fleischigkeit der Tiere.",
+      "Durchschnittlich werden nur 5 von 100 Tieren für US Gourmet Beef und Swiss Gourmet Beef Grand Cru verwendet. Wir reifen unser Fleisch selbst: Bei dieser traditionellen Reifung «Dry Aged» reifen die Gourmet-Steaks bei 2–3 Grad Celsius und 80–85 % Luftfeuchtigkeit während 42 bis 56 Tagen am Knochen in unserer einzigartigen Show-Kühlvitrine. Durch die mikrobiologische, enzymatische Reifung wird das Fleisch mürbe und besonders zart und entwickelt so ein typisches, vorzügliches Aroma: Es riecht nach Schinken, nach Moschus, nach frisch gebackenem Hefezopf – und das alles gleichzeitig.",
+      "Unsere freundliche und gut ausgebildete Bedienung erklärt Ihnen gerne die Besonderheiten der verschiedenen Steaks und um welchen Teil des Rindes es sich dabei jeweils handelt. So finden Sie genau das, was Ihnen schmeckt."
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Salate & Vorspeisen",
+     "items": [
+      {
+       "name": "Maissalat «Gaucho»",
+       "desc": "Mais mit Peperoniwürfeln an hausgemachtem Dressing, garniert mit Blattsalat",
+       "price": "16.50"
+      },
+      {
+       "name": "Gamberoni auf Rucola",
+       "desc": "Grillierte Riesencrevetten auf Rucolasalat mit Peperoncini, dazu servieren wir Olivenöl",
+       "price": "23.50"
+      },
+      {
+       "name": "Rindsfilet-Sashimi",
+       "desc": "Dünn aufgeschnittenes, in Kräuter eingelegtes Rindsfilet, serviert mit Chili-Sojasauce, Olivenöl und Sesam",
+       "price": "27.50"
+      },
+      {
+       "name": "Empanadas",
+       "desc": "Die populärste Füllung für dieses traditionelle argentinische Gebäck ist Rindfleisch mit schwarzen Oliven nach einem Hausrezept",
+       "price": "15.50"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "The Cuts · U.S. Gourmet Beef Dry Aged",
+     "note": "30 Tage gereift · Preis je 100 g",
+     "items": [
+      {
+       "name": "Rib-Eye al Osso",
+       "desc": "Das Rib-Eye oder der Hohrücken besteht aus verschiedenen Muskeln, welche zwischen der sechsten und zwölften Rippe liegen, also zwischen Hals und Hinterviertel. Das Fleisch des Hohrückens ist zartfaserig und bei hoher Qualität sehr stark marmoriert.",
+       "price": "26.00",
+       "tag": "mind. 400 g"
+      },
+      {
+       "name": "Controfiletto",
+       "desc": "Entrecôte am Knochen (bone in sirloin) wird aus dem Hinterviertel des Tieres geschnitten. Es hat einen höheren intramuskulären Fettanteil als das Filet und zusätzlich eine Fettabdeckung. Es liefert zartes und gut marmoriertes Rindfleisch.",
+       "price": "27.00",
+       "tag": "mind. 400 g"
+      },
+      {
+       "name": "Bistecca alla Fiorentina",
+       "desc": "Porterhouse ist ein Steak mit dem T-Knochen. Auf der einen Seite das Entrecôte, auf der anderen das Filet. Beim Porterhouse ist das Filet grösser.",
+       "price": "28.00",
+       "tag": "mind. 400 g"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "title": "Die Geschichte der «Finest Argentine» Steaks",
+     "text": "Alle «Finest Argentine»-Steaks kommen von jungen Stieren, welche sich ausschliesslich von saftigen und nahrhaften Kräutern der argentinischen Pampas ernährt haben. Das Fleisch dieser jungen Stiere ist unglaublich zart, ausgereift im Geschmack und zergeht regelrecht auf der Zunge. Die lange Reise von den Weiden der Pampas bis zu Ihrem Tisch garantiert einen schonenden und langsamen Reifungsprozess von vier bis sieben Wochen, der den Geschmack des Fleisches noch schmackhafter werden lässt. Im Restaurant wird das Fleisch auf Bestellung «à la minute» geschnitten, leicht gesalzen, mit Chimichurri-Öl bestrichen und auf dem heissen Grill sorgfältigst zubereitet."
+    },
+    {
+     "type": "table",
+     "title": "Bife Argentino · Bistecche Argentiniane",
+     "columns": [
+      "180 g",
+      "250 g",
+      "400 g",
+      "500 g"
+     ],
+     "rows": [
+      {
+       "name": "Bife de Chorizo",
+       "desc": "Das traditionelle Entrecôte unter den Steaks",
+       "prices": [
+        "41.00",
+        "54.00",
+        "78.00",
+        "86.50"
+       ]
+      },
+      {
+       "name": "Bife de Lomo",
+       "desc": "Das zarteste und feinste Filetstück, eine schmackhafte Delikatesse",
+       "prices": [
+        "59.00",
+        "72.00",
+        "94.00",
+        "102.00"
+       ]
+      },
+      {
+       "name": "U.S. Bife Ancho",
+       "desc": "Schön marmoriertes Rib-Eye-Steak vom Hohrücken",
+       "prices": [
+        null,
+        "62.00",
+        "85.00",
+        "122.00"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "title": "Asado & Platten · Zum Teilen",
+     "items": [
+      {
+       "name": "Asado Teller",
+       "desc": "Eine Variation der saftigen Steaks. Bestes Rindfleisch ausschliesslich von ausgewählten Jungstieren: Entrecôte, Rumpsteak und Filet.",
+       "variants": [
+        {
+         "label": "240 g",
+         "price": "56.00"
+        },
+        {
+         "label": "400 g",
+         "price": "85.00"
+        }
+       ],
+       "variantStyle": "stack"
+      },
+      {
+       "name": "Lomo de Argentino",
+       "desc": "Bestes Rindfleisch am Stück grilliert",
+       "variants": [
+        {
+         "label": "Für 1–2 Personen · 600 g · 2 Beilagen",
+         "price": "160.00"
+        },
+        {
+         "label": "Für 3–4 Personen · 1200 g · 3 Beilagen",
+         "price": "320.00"
+        }
+       ],
+       "variantStyle": "list"
+      },
+      {
+       "name": "Gaucho Platte",
+       "desc": "New Yorker Club Steak · Rindsfilet · Rib-Eye-Steak",
+       "variants": [
+        {
+         "label": "Für 4 Personen · 1200 g · 4 Beilagen nach Wahl",
+         "price": "325.00"
+        }
+       ],
+       "variantStyle": "list"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "title": "Beilagen & Saucen",
+     "rows": [
+      {
+       "text": "Maiskolben · Grillierte Champignons · Grill-Gemüse · Country Fries",
+       "price": "je 8.00"
+      },
+      {
+       "text": "Sauce Béarnaise oder grüne Pfeffersauce"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vini",
+   "nav": "Vini",
+   "kicker": "Selezione dei Vini",
+   "title": "Weinkarte",
+   "blocks": [
+    {
+     "type": "wines",
+     "title": "Perlwein",
+     "kicker": "Spumante",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Italien",
+       "region": "Venetien",
+       "name": "Paladin Prosecco DOC",
+       "prices": [
+        "9.–",
+        "48.–"
+       ],
+       "detail": "Extra Dry Millesimato 2024"
+      },
+      {
+       "country": "Italien",
+       "region": "Lombardei",
+       "name": "Franciacorta Berlucchi 61 Brut DOCG",
+       "prices": [
+        "",
+        "75.–"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Champagner",
+     "kicker": "Champagne",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Frankreich",
+       "region": "Champagne",
+       "name": "Juliette-Pétrett",
+       "prices": [
+        "",
+        "134.–"
+       ],
+       "detail": "Grand Cru Extra Brut"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Champagne",
+       "name": "Lucien Roguet N°2 Blanc de Blancs",
+       "prices": [
+        "17.–",
+        "115.–"
+       ],
+       "detail": "Grand Cru Brut"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Champagne",
+       "name": "Fernand Thill Tradition",
+       "prices": [
+        "14.–",
+        "98.–"
+       ],
+       "detail": "Grand Cru Brut"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Reims",
+       "name": "Louis Roederer Cristal Brut 2016",
+       "prices": [
+        "",
+        "580.–"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Roséwein",
+     "kicker": "Vino rosato",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Schweiz",
+       "region": "Neuenburg",
+       "name": "Œil-de-Perdrix",
+       "prices": [
+        "7.50",
+        "52.–"
+       ],
+       "detail": "Château Vaumarcus AOC, Neuchâtel 2023"
+      },
+      {
+       "country": "Italien",
+       "region": "Sizilien",
+       "name": "Le Due Concette",
+       "prices": [
+        "8.50",
+        "60.–"
+       ],
+       "detail": "Rosato IGP Terre Siciliane 2023"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Provence",
+       "name": "BY.OTT",
+       "prices": [
+        "8.–",
+        "58.–"
+       ],
+       "detail": "Domaine Ott, Côtes de Provence AOC 2023"
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Weisswein",
+     "kicker": "Vini bianchi",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Schweiz",
+       "region": "Waadt",
+       "name": "Yvorne «Tradition»",
+       "prices": [
+        "7.50",
+        "52.–"
+       ],
+       "detail": "Sélection Terravin AOC Chablais 2024"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Waadt",
+       "name": "St-Saphorin «Les Fosses»",
+       "prices": [
+        "7.–",
+        "48.–"
+       ],
+       "detail": "Lavaux AOC 2024"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Wallis",
+       "name": "Cuvée Madame Rosmarie",
+       "prices": [
+        "8.50",
+        "65.–"
+       ],
+       "detail": "Diego Mathier, AOC Valais 2023"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Wallis",
+       "name": "Petite Arvine Valais AOC",
+       "prices": [
+        "",
+        "62.–"
+       ],
+       "detail": "Grand Vin du Maraudeur, Cordonier & Lamon 2023"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Bündner Herrschaft",
+       "name": "Schloss Salenegg",
+       "prices": [
+        "",
+        "95.–"
+       ],
+       "detail": "Chardonnay, Barrique, AOC Graubünden 2023"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Tessin",
+       "name": "Biacco Brivio",
+       "prices": [
+        "7.–",
+        "49.50"
+       ],
+       "detail": "Contrada, Merlot, Guido Brivio, Mendrisio 2023"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Tessin",
+       "name": "Bianco Rovere",
+       "prices": [
+        "",
+        "90.–"
+       ],
+       "detail": "Bianco di Merlot DOC, Guido Brivio 2023"
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Roero Arneis",
+       "prices": [
+        "7.–",
+        "45.–"
+       ],
+       "detail": "Villata DOCG 2023"
+      },
+      {
+       "country": "Italien",
+       "region": "Lugana",
+       "name": "Lugana L'Lac",
+       "prices": [
+        "",
+        "52.–"
+       ],
+       "detail": "Sommacampagna 2024"
+      },
+      {
+       "country": "Italien",
+       "region": "Sizilien",
+       "name": "Planeta Chardonnay Sicilia DOC 2022",
+       "prices": [
+        "",
+        "78.–"
+       ]
+      },
+      {
+       "country": "Frankreich",
+       "region": "Burgund",
+       "name": "Chablis 1er Cru",
+       "prices": [
+        "",
+        "89.–"
+       ],
+       "detail": "Montée de Tonnerre AC 2022"
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Rotwein",
+     "kicker": "Vini rossi",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Schweiz",
+       "region": "Tessin",
+       "name": "Sassi Grossi",
+       "prices": [
+        "",
+        "145.–"
+       ],
+       "detail": "Merlot del Ticino DOC 2020"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Graubünden",
+       "name": "Schloss Salenegg",
+       "prices": [
+        "",
+        "75.–"
+       ],
+       "detail": "Blauburgunder traditionell, AOC Graubünden 2022"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Wallis",
+       "name": "Cuvée Madame Rosmarie",
+       "prices": [
+        "8.50",
+        "62.–"
+       ],
+       "detail": "Diego Mathier, AOC Valais 2023"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Wallis",
+       "name": "Bonvin Cornalin Nobles Cépages",
+       "prices": [
+        "",
+        "75.–"
+       ],
+       "detail": "AOC Valais 2022"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Burgund",
+       "name": "Domaine de Montille Bourgogne",
+       "prices": [
+        "",
+        "75.–"
+       ],
+       "detail": "Pinot Noir Côte d'Or, AC 2022"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Burgund",
+       "name": "Vougeraie Savigny-lès-Beaune",
+       "prices": [
+        "",
+        "150.–"
+       ],
+       "detail": "1er Cru «Les Marconnets» AC 2021"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Rhône Sud",
+       "name": "Châteauneuf-du-Pape",
+       "prices": [
+        "",
+        "280.–"
+       ],
+       "detail": "Château de Beaucastel AOC 2017"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Margaux",
+       "name": "Alter Ego de Palmer",
+       "prices": [
+        "",
+        "350.–"
+       ],
+       "detail": "2ème vin, Margaux 2022"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Saint-Émilion",
+       "name": "Château Rocher Figeac",
+       "prices": [
+        "7.50",
+        "58.–"
+       ],
+       "detail": "Cru St-Émilion AOC 2020"
+      },
+      {
+       "country": "Spanien",
+       "region": "Rioja",
+       "name": "Vivanco Rioja Crianza DOC",
+       "prices": [
+        "6.–",
+        "48.–"
+       ],
+       "detail": "Selección de Familia 2016"
+      },
+      {
+       "country": "Spanien",
+       "region": "Sardón de Duero",
+       "name": "Selección Especial VdT",
+       "prices": [
+        "",
+        "65.–"
+       ],
+       "detail": "Abadía Retuerta 2019"
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Rotwein Italien",
+     "kicker": "Vini rossi",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Italien",
+       "region": "Venetien",
+       "name": "Ripasso Valpolicella DOC",
+       "prices": [
+        "7.50",
+        "58.–"
+       ],
+       "detail": "Vigneti di Ettore, Negrar Verona 2020"
+      },
+      {
+       "country": "Italien",
+       "region": "Venetien",
+       "name": "Amarone della Valpolicella DOCG",
+       "prices": [
+        "",
+        "98.–"
+       ],
+       "detail": "Torre d'Orti 2019"
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Ceretto Nebbiolo d'Alba",
+       "prices": [
+        "",
+        "90.–"
+       ],
+       "detail": "Bernardina DOC 2022",
+       "bio": true
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Ceretto Dolcetto d'Alba",
+       "prices": [
+        "",
+        "74.–"
+       ],
+       "detail": "Rossana DOC 2022",
+       "bio": true
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Ceretto Barbaresco DOCG 2021",
+       "prices": [
+        "",
+        "160.–"
+       ],
+       "bio": true
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Ceretto Barolo DOCG 2016",
+       "prices": [
+        "",
+        "140.–"
+       ],
+       "bio": true
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Viano Nebbiolo Langhe DOC 2018",
+       "prices": [
+        "",
+        "52.–"
+       ]
+      },
+      {
+       "country": "Italien",
+       "region": "Piemont",
+       "name": "Sito Moresco Langhe DOP",
+       "prices": [
+        "",
+        "98.–"
+       ],
+       "detail": "Angelo Gaja 2021"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Castelvecchi Chianti Classico",
+       "prices": [
+        "",
+        "150.–"
+       ],
+       "detail": "Madonnino Gran Selezione DOC 2016"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Castelvecchi Chianti Classico",
+       "prices": [
+        "",
+        "76.–"
+       ],
+       "detail": "Riserva Lodolaio DOCG 2019"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Bolgheri Rosso",
+       "prices": [
+        "",
+        "78.–"
+       ],
+       "detail": "Podere Grattamacco DOC 2022"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Castello di Bolgheri",
+       "prices": [
+        "",
+        "220.–"
+       ],
+       "detail": "Bolgheri Superiore DOC 2019"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Magari Bolgheri DOP",
+       "prices": [
+        "",
+        "110.–"
+       ],
+       "detail": "Ca'Marcanda di Gaja 2019"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Tignanello, Toscana IGT",
+       "prices": [
+        "",
+        "220.–"
+       ],
+       "detail": "Antinori Tignanello 2021"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Ornellaia, Bolgheri DOC",
+       "prices": [
+        "",
+        "360.–"
+       ],
+       "detail": "Superiore Ornellaia 2020"
+      },
+      {
+       "country": "Italien",
+       "region": "Toskana",
+       "name": "Sassicaia DOC",
+       "prices": [
+        "",
+        "560.–"
+       ],
+       "detail": "Tenuta San Guido 2020"
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Rotwein Süditalien",
+     "kicker": "Vini rossi",
+     "columns": [
+      "1 dl",
+      "7.5 dl"
+     ],
+     "items": [
+      {
+       "country": "Italien",
+       "region": "Kalabrien",
+       "name": "GB Giovanni Battista",
+       "prices": [
+        "",
+        "75.–"
+       ],
+       "detail": "Odoardi Rosso Calabria IGT 2016"
+      },
+      {
+       "country": "Italien",
+       "region": "Apulien",
+       "name": "Antico Ceppo",
+       "prices": [
+        "6.–",
+        "46.–"
+       ],
+       "detail": "Primitivo di Manduria Riserva DOP 2020"
+      },
+      {
+       "country": "Italien",
+       "region": "Sizilien",
+       "name": "Vito Pipareddu DOC 100 Anni",
+       "prices": [
+        "",
+        "88.–"
+       ]
+      },
+      {
+       "country": "Italien",
+       "region": "Sizilien",
+       "name": "Donnafugata Mille e una Notte IGT 2020",
+       "prices": [
+        "",
+        "185.–"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Grossflaschen",
+     "kicker": "Magnum",
+     "columns": [
+      "150 cl"
+     ],
+     "items": [
+      {
+       "country": "Schweiz",
+       "region": "Graubünden",
+       "name": "Schloss Salenegg Carschluns",
+       "prices": [
+        "240.–"
+       ],
+       "detail": "Pinot Noir AOC Graubünden 2021"
+      },
+      {
+       "country": "Schweiz",
+       "region": "Tessin",
+       "name": "Sassi Grossi",
+       "prices": [
+        "300.–"
+       ],
+       "detail": "Merlot del Ticino DOC 2019"
+      },
+      {
+       "country": "Italien",
+       "region": "Venetien",
+       "name": "Ripasso Valpolicella",
+       "prices": [
+        "150.–"
+       ],
+       "detail": "Classico Superiore Ettore DOC 2017",
+       "bio": true
+      },
+      {
+       "country": "Italien",
+       "region": "Kalabrien",
+       "name": "GB Giovanni Battista",
+       "prices": [
+        "160.–"
+       ],
+       "detail": "Odoardi Rosso Calabria IGT 2014"
+      },
+      {
+       "country": "Frankreich",
+       "region": "Saint-Émilion",
+       "name": "Château Rocher Figeac",
+       "prices": [
+        "102.–"
+       ],
+       "detail": "Cru St-Émilion AOC 2018"
+      },
+      {
+       "country": "Spanien",
+       "region": "Ribera del Duero",
+       "name": "TRUS Reserva",
+       "prices": [
+        "160.–"
+       ],
+       "detail": "Bodegas Trus, Ribera del Duero 2016"
+      }
+     ]
+    },
+    {
+     "type": "wines",
+     "title": "Süsswein",
+     "kicker": "Vino dolce",
+     "columns": [
+      "4 cl"
+     ],
+     "items": [
+      {
+       "country": "Schweiz",
+       "region": "Tessin",
+       "name": "Tamborini «Tinto Forte Vintage»",
+       "prices": [
+        "18.–"
+       ],
+       "detail": "Merlot del Ticino DOC"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "allergens": [
+  {
+   "de": "Glutenhaltiges Getreide",
+   "it": "Cereali contenenti glutine"
+  },
+  {
+   "de": "Krebstiere",
+   "it": "Crostacei"
+  },
+  {
+   "de": "Eier",
+   "it": "Uova"
+  },
+  {
+   "de": "Fisch",
+   "it": "Pesce"
+  },
+  {
+   "de": "Erdnüsse",
+   "it": "Arachidi"
+  },
+  {
+   "de": "Soja",
+   "it": "Soia"
+  },
+  {
+   "de": "Milch / Laktose",
+   "it": "Latte e lattosio"
+  },
+  {
+   "de": "Schalenfrüchte (Nüsse)",
+   "it": "Frutta a guscio"
+  },
+  {
+   "de": "Sellerie",
+   "it": "Sedano"
+  },
+  {
+   "de": "Senf",
+   "it": "Senape"
+  },
+  {
+   "de": "Sesam",
+   "it": "Semi di sesamo"
+  },
+  {
+   "de": "Sulfite",
+   "it": "Solfiti"
+  },
+  {
+   "de": "Lupinen",
+   "it": "Lupini"
+  },
+  {
+   "de": "Weichtiere",
+   "it": "Molluschi"
+  }
+ ],
+ "origin": [
+  {
+   "label": "Schwein",
+   "value": "Italien / Schweiz"
+  },
+  {
+   "label": "Kalb",
+   "value": "Schweiz"
+  },
+  {
+   "label": "Rind",
+   "value": "Argentinien / USA"
+  },
+  {
+   "label": "Thunfisch",
+   "value": "westl. Zentralpazifik / Philippinen"
+  },
+  {
+   "label": "Lachs",
+   "value": "Schweiz"
+  },
+  {
+   "label": "Meeresfrüchte",
+   "value": "Italien"
+  },
+  {
+   "label": "Crevetten",
+   "value": "Vietnam"
+  },
+  {
+   "label": "Riesencrevetten",
+   "value": "Vietnam"
+  },
+  {
+   "label": "Lamm",
+   "value": "Australien"
+  },
+  {
+   "label": "Forelle",
+   "value": "Schweiz"
+  },
+  {
+   "label": "Sardellen",
+   "value": "Italien"
+  }
+ ],
+ "ldv": "Kann mit Antibiotika und/oder anderen antimikrobiellen Leistungsförderern erzeugt worden sein.",
+ "allergyNote": "Wir bitten Sie, vor Ihrer Bestellung eventuelle Allergien und Intoleranzen unserem Servicepersonal mitzuteilen. Unsere Mitarbeitenden stehen Ihnen für Informationen über Zutaten und Zubereitung der Gerichte gerne zur Verfügung.",
+ "priceNote": "Alle Preise in CHF inkl. der gesetzlichen MwSt. · Preise ½ Portion / Hauptgang.",
+ "originCodes": {
+  "CH": "Schweiz",
+  "IT": "Italien",
+  "VT": "Vietnam",
+  "AUS": "Australien",
+  "NOR": "Norwegen",
+  "CH & FAO 71": "Schweiz & FAO-Fanggebiet 71 (westlicher Zentralpazifik)"
+ }
+}
