@@ -6,7 +6,7 @@ import Figure from "@/components/Figure";
 import { ArrowLink, CtaBand } from "@/components/Blocks";
 import { Arrow } from "@/components/Icons";
 import { pizzaCount } from "@/content/menu";
-import { site } from "@/content/site";
+import { reservation, site } from "@/content/site";
 import { photos, type PhotoKey } from "@/content/images";
 import { HERO_QUALITY, HERO_SIZES, LANDSCAPE_MEDIA, PORTRAIT_MEDIA } from "@/lib/hero";
 
@@ -82,7 +82,7 @@ function JsonLd() {
     image: `${site.url}/opengraph-image.jpg`,
     servesCuisine: ["Italienisch", "Pizza", "Pasta", "Steaks"],
     hasMenu: `${site.url}/speisekarte`,
-    acceptsReservations: true,
+    acceptsReservations: reservation.url,
     address: site.address
       ? {
           "@type": "PostalAddress",

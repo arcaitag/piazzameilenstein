@@ -37,9 +37,9 @@ export default function ContactForm() {
         <TextArea api={api} name="message" label="Nachricht" required className="field--full" rows={6} />
       </div>
       <p className="form-note">
-        Für Tischreservationen nutzen Sie bitte das{" "}
+        Für Tischreservationen nutzen Sie bitte die{" "}
         <a className="text-link" href="/reservation">
-          Reservationsformular
+          Online-Reservation
         </a>
         , für Feiern und Firmenanlässe die{" "}
         <a className="text-link" href="/anlaesse#anfrage">

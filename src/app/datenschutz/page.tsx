@@ -56,11 +56,25 @@ export default function DatenschutzPage() {
         dieser Website eingebunden; es werden keine Verbindungen zu Google Fonts oder anderen Schriftdiensten aufgebaut.
       </p>
 
-      <h2>3. Reservations-, Anlass- und Kontaktformular</h2>
+      <h2>3. Online-Reservation über Lunchgate</h2>
+      <p>
+        Für Tischreservationen setzen wir das Reservationssystem foratable der Lunchgate AG, Zürich (Schweiz), ein. Es ist
+        auf unserer Reservationsseite eingebunden. Beim Aufruf dieser Seite werden Inhalte von den Servern der Lunchgate AG
+        geladen (static.foratable.com und guest.foratable.com); dabei erhält Lunchgate technisch notwendige Daten wie Ihre
+        IP-Adresse und Angaben zu Ihrem Browser.
+      </p>
+      <p>
+        Wenn Sie einen Tisch reservieren, werden die Angaben, die Sie dort eingeben – etwa Name, Kontaktangaben, Datum,
+        Uhrzeit und Anzahl Personen –, über Lunchgate bearbeitet, damit wir Ihre Reservation verwalten können. Das
+        Reservationssystem kann dafür eigene Cookies oder ähnliche Technologien einsetzen. Für die Datenbearbeitung durch
+        Lunchgate gelten zusätzlich deren Datenschutzbestimmungen.
+      </p>
+
+      <h2>4. Anlass- und Kontaktformular</h2>
       <p>
         Wenn Sie uns über ein Formular schreiben, bearbeiten wir die Angaben, die Sie eingeben – etwa Name, E-Mail-Adresse,
-        Telefonnummer, Datum, Uhrzeit, Anzahl Personen und Ihre Nachricht. Wir verwenden sie ausschliesslich, um Ihre
-        Reservation, Ihren Anlass oder Ihre Anfrage zu bearbeiten und mit Ihnen in Kontakt zu treten.
+        Telefonnummer, Datum, Anzahl Gäste und Ihre Nachricht. Wir verwenden sie ausschliesslich, um Ihren Anlass oder Ihre
+        Anfrage zu bearbeiten und mit Ihnen in Kontakt zu treten.
       </p>
       <p>
         Die Angaben werden per E-Mail an uns übermittelt.{" "}
@@ -79,19 +93,21 @@ export default function DatenschutzPage() {
         werden keine Cookies gesetzt und keine Drittdienste eingebunden.
       </p>
 
-      <h2>4. Cookies, Analyse und Tracking</h2>
+      <h2>5. Cookies, Analyse und Tracking</h2>
       <p>
-        Diese Website setzt keine Cookies, verwendet keine Analyse- oder Trackingdienste und bindet keine Social-Media-Plugins
-        ein.
+        Diese Website selbst setzt keine Cookies, verwendet keine Analyse- oder Trackingdienste und bindet keine
+        Social-Media-Plugins ein. Ausgenommen ist das Reservationssystem von Lunchgate auf der Reservationsseite (siehe
+        Ziffer 3).
       </p>
 
-      <h2>5. Weitergabe von Daten</h2>
+      <h2>6. Weitergabe von Daten</h2>
       <p>
-        Wir geben Ihre Daten nicht an Dritte weiter, ausser an die oben genannten Dienstleister, soweit dies für den Betrieb der
-        Website und die Bearbeitung Ihrer Anfrage nötig ist, oder wenn wir gesetzlich dazu verpflichtet sind.
+        Wir geben Ihre Daten nicht an Dritte weiter, ausser an die oben genannten Dienstleister (Hosting, Reservationssystem,
+        E-Mail-Versand), soweit dies für den Betrieb der Website, Ihre Reservation oder die Bearbeitung Ihrer Anfrage nötig
+        ist, oder wenn wir gesetzlich dazu verpflichtet sind.
       </p>
 
-      <h2>6. Ihre Rechte</h2>
+      <h2>7. Ihre Rechte</h2>
       <p>Sie haben im Rahmen des Datenschutzgesetzes insbesondere das Recht,</p>
       <ul>
         <li>Auskunft darüber zu verlangen, ob und welche Personendaten wir über Sie bearbeiten,</li>
@@ -114,7 +130,7 @@ export default function DatenschutzPage() {
         . Zudem können Sie sich beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) beschweren.
       </p>
 
-      <h2>7. Änderungen</h2>
+      <h2>8. Änderungen</h2>
       <p>
         Wir passen diese Erklärung an, wenn sich unsere Website oder die eingesetzten Dienste ändern. Es gilt die jeweils hier
         veröffentlichte Fassung.

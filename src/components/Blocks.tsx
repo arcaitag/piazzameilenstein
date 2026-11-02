@@ -57,7 +57,7 @@ export function PageIntro({
 
 export function CtaBand({
   title = "Wir freuen uns auf Ihren Besuch.",
-  text = "Reservieren Sie Ihren Tisch online – wir bestätigen Ihnen die Reservation persönlich.",
+  text = "Reservieren Sie Ihren Tisch bequem online.",
   secondary = { href: "/speisekarte", label: "Speisekarte ansehen" },
 }: {
   title?: string;

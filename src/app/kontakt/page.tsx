@@ -106,11 +106,11 @@ export default function KontaktPage() {
               </dl>
               {missing ? (
                 <p className="notice small" style={{ marginTop: "1.5rem" }}>
-                  Einige Angaben ergänzen wir gerade. Für eine Reservation nutzen Sie bitte das{" "}
+                  Einige Angaben ergänzen wir gerade. Ihren Tisch reservieren Sie am einfachsten{" "}
                   <Link href="/reservation" className="text-link">
-                    Reservationsformular
-                  </Link>{" "}
-                  – wir bestätigen Ihnen den Tisch persönlich.
+                    online
+                  </Link>
+                  .
                 </p>
               ) : null}
             </div>

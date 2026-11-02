@@ -2860,3 +2860,31 @@ html:not(.intro) .hero__slats,
     clip-path: none !important;
   }
 }
+
+/* ---------- Online-Reservation (Lunchgate) ---------- */
+.booking {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.booking[data-status="loading"] .booking__frame {
+  min-height: 560px;
+}
+
+.booking__frame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.booking__note {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.booking[data-status="loading"] .booking__note {
+  position: absolute;
+  inset: 0 0 auto;
+  color: var(--muted);
+}

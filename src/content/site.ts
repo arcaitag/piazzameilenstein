@@ -59,6 +59,14 @@ export const site: Site = {
 
 export const allowIndexing = process.env.ALLOW_INDEXING === "true";
 
+/** Online-Reservation über Lunchgate (Reservationssystem foratable) */
+export const reservation = {
+  provider: "Lunchgate",
+  url: "https://guest.foratable.com/restaurants/019eac0da77573209d605652dc1a7cc5",
+  embedUrl: "https://guest.foratable.com/restaurants/019eac0da77573209d605652dc1a7cc5?embed=inline",
+  scriptSrc: "https://static.foratable.com/iframeContainers.js",
+};
+
 export const mainNav = [
   { href: "/kulinarik", label: "Kulinarik" },
   { href: "/restaurant", label: "Restaurant" },

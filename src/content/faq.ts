@@ -7,16 +7,12 @@ export const faq: FaqGroup[] = [
     items: [
       {
         q: "Wie reserviere ich einen Tisch?",
-        a: "Über unser Reservationsformular. Geben Sie Datum, Uhrzeit und Anzahl Personen an – wir prüfen die Verfügbarkeit und melden uns per E-Mail oder Telefon bei Ihnen.",
+        a: "Online auf unserer Reservationsseite. Dort wählen Sie Datum, Uhrzeit und Anzahl Personen; die Reservation läuft über das Reservationssystem Lunchgate.",
         link: { href: "/reservation", label: "Zur Reservation" },
       },
       {
-        q: "Ab wann ist meine Reservation verbindlich?",
-        a: "Ihre Anfrage über das Formular ist noch keine feste Buchung. Verbindlich ist die Reservation erst, wenn wir sie Ihnen bestätigt haben.",
-      },
-      {
         q: "Kann ich auf der Terrasse sitzen?",
-        a: "Ja, unsere Terrasse liegt unter grossen Sonnenschirmen. Vermerken Sie bei der Reservation einfach, dass Sie gerne draussen sitzen möchten – je nach Wetter richten wir uns danach.",
+        a: "Ja, unsere Terrasse liegt unter grossen Sonnenschirmen. Sagen Sie uns einfach, dass Sie gerne draussen sitzen möchten – je nach Wetter richten wir uns danach.",
       },
       {
         q: "Wir sind eine grössere Gruppe. Wie gehen wir vor?",
@@ -30,7 +26,7 @@ export const faq: FaqGroup[] = [
     items: [
       {
         q: "Ich habe eine Allergie oder Unverträglichkeit. Was muss ich tun?",
-        a: "Bitte sagen Sie es unserem Servicepersonal vor der Bestellung. Wir informieren Sie gerne über Zutaten und Zubereitung. Bei einer Reservation können Sie es bereits im Bemerkungsfeld angeben.",
+        a: "Bitte sagen Sie es unserem Servicepersonal vor der Bestellung. Wir informieren Sie gerne über Zutaten und Zubereitung. Gerne können Sie es uns auch schon bei der Reservation mitteilen.",
       },
       {
         q: "Gibt es glutenfreie Pizza?",

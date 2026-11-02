@@ -102,7 +102,7 @@ export default function SpeisekartePage() {
             <div className="panel">
               <div>
                 <span className="eyebrow">Appetit bekommen?</span>
-                <h2 className="t-h3">Reservieren Sie Ihren Tisch – wir bestätigen ihn persönlich.</h2>
+                <h2 className="t-h3">Reservieren Sie Ihren Tisch online.</h2>
               </div>
               <div className="panel__aside">
                 <Link href="/reservation" className="btn btn--primary">
