@@ -25,11 +25,13 @@ export default function Footer() {
               <p>{site.city}</p>
             )}
             {site.hours ? (
-              <ul style={{ marginTop: "1rem" }}>
+              <ul className="footer-hours" aria-label="Öffnungszeiten">
                 {site.hours.map((h) => (
                   <li key={h.days}>
-                    {h.days}: {h.time}
-                    {h.note ? ` (${h.note})` : ""}
+                    <span>{h.days}</span> <span>
+                      {h.time}
+                      {h.note ? ` (${h.note})` : ""}
+                    </span>
                   </li>
                 ))}
               </ul>

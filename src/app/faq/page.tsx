@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { ArrowLink, CtaBand, PageIntro } from "@/components/Blocks";
 import { faq } from "@/content/faq";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Häufige Fragen",
   description:
-    "Antworten zu Reservation, Terrasse, Allergien, glutenfreier Pizza, Herkunft von Fleisch und Fisch sowie zu Feiern und Firmenanlässen bei Piazza Meilenstein.",
-  alternates: { canonical: "/faq" },
-};
+    "Antworten zu Reservation, Terrasse, Allergien, glutenfreier Pizza, Herkunft von Fleisch und Fisch sowie zu Anlässen bei Piazza Meilenstein in Langenthal.",
+  path: "/faq",
+});
 
 export default function FaqPage() {
   const jsonLd = {

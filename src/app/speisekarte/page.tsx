@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import MenuNav from "@/components/menu/MenuNav";
 import { MenuSectionView } from "@/components/menu/MenuBlocks";
@@ -6,12 +7,12 @@ import { Arrow, Download } from "@/components/Icons";
 import { menu } from "@/content/menu";
 import { menuPdf } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Speisekarte",
   description:
-    "Die ganze Karte von Piazza Meilenstein: Antipasti, Insalate, Pasta und Risotto, Secondi, Pizze, Bisteccheria mit Dry Aged Beef sowie die Weinkarte – mit Preisen, Allergenen und Herkunft.",
-  alternates: { canonical: "/speisekarte" },
-};
+    "Die ganze Karte von Piazza Meilenstein in Langenthal: Antipasti, Pasta, Pizze, Dry Aged Beef aus der Bisteccheria und Weine – mit Preisen und Allergenen.",
+  path: "/speisekarte",
+});
 
 export default function SpeisekartePage() {
   const navItems = [...menu.sections.map((s) => ({ id: s.id, label: s.nav })), { id: "allergene", label: "Allergene" }];

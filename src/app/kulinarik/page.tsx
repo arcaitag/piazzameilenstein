@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Figure from "@/components/Figure";
 import { ArrowLink, CtaBand, PageIntro } from "@/components/Blocks";
@@ -6,12 +7,12 @@ import { Arrow, Download } from "@/components/Icons";
 import { pizzaCount } from "@/content/menu";
 import { menuPdf } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Kulinarik",
   description:
-    "Antipasti, hausgemachte Pasta, Pizza in über dreissig Varianten, Dry Aged Beef und Bife Argentino vom Grill sowie eine Weinkarte mit Klassikern aus Italien und der Schweiz.",
-  alternates: { canonical: "/kulinarik" },
-};
+    "Antipasti, hausgemachte Pasta, über dreissig Pizzen, Dry Aged Beef und Bife Argentino vom Grill sowie Weine aus Italien und der Schweiz – in Langenthal.",
+  path: "/kulinarik",
+});
 
 export default function KulinarikPage() {
   return (

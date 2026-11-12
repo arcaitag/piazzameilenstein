@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Figure from "@/components/Figure";
 import LunchgateWidget from "@/components/LunchgateWidget";
-import { reservation } from "@/content/site";
+import { reservation, site } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Tisch reservieren",
   description:
-    "Reservieren Sie Ihren Tisch bei Piazza Meilenstein online: Datum, Uhrzeit und Anzahl Personen wählen – direkt über unser Reservationssystem.",
-  alternates: { canonical: "/reservation" },
-};
+    "Tisch bei Piazza Meilenstein in Langenthal online reservieren: Datum, Uhrzeit und Anzahl Personen wählen – direkt über unser Reservationssystem.",
+  path: "/reservation",
+});
 
 export default function ReservationPage() {
   return (
@@ -52,6 +53,14 @@ export default function ReservationPage() {
                   Zur Anlass-Anfrage
                 </Link>
               </p>
+              {site.phone ? (
+                <p style={{ marginTop: "1.6rem" }}>
+                  Lieber telefonisch? Rufen Sie uns an:{" "}
+                  <a className="text-link" href={site.phone.href}>
+                    {site.phone.display}
+                  </a>
+                </p>
+              ) : null}
               <div style={{ marginTop: "2.5rem" }}>
                 <Figure name="innenraum" ratio="4 / 3" sizes="(max-width: 999px) 100vw, 30vw" decorative />
               </div>

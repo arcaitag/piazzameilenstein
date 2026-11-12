@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getImageProps } from "next/image";
 import type { CSSProperties } from "react";
@@ -6,9 +7,16 @@ import Figure from "@/components/Figure";
 import { ArrowLink, CtaBand } from "@/components/Blocks";
 import { Arrow } from "@/components/Icons";
 import { pizzaCount } from "@/content/menu";
-import { reservation, site } from "@/content/site";
+import { site } from "@/content/site";
 import { photos, type PhotoKey } from "@/content/images";
 import { HERO_QUALITY, HERO_SIZES, LANDSCAPE_MEDIA, PORTRAIT_MEDIA } from "@/lib/hero";
+import { openingHoursSpecification } from "@/lib/hours";
+import { brand } from "@/lib/seo";
+
+// Titel, Beschreibung und Vorschau kommen aus dem Layout
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 // Erstes Bild: «11 – Meilenstein 2.0-53» (der rote Ferrari), danach ruhiger Wechsel
 const HERO_SLIDES: PhotoKey[] = ["ferrari", "innenraum", "terrasse"];
@@ -73,29 +81,59 @@ function HeroPreload() {
   );
 }
 
+/** Strukturierte Daten für Google: Restaurant (Adresse, Telefon, Öffnungszeiten, Karte, Reservation) und Website-Name */
 function JsonLd() {
-  const data = {
+  const base = site.url;
+  const restaurant = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
+    "@id": `${base}/#restaurant`,
     name: site.name,
-    url: site.url,
-    image: `${site.url}/opengraph-image.jpg`,
+    description: site.description,
+    url: `${base}/`,
+    logo: `${base}/brand/piazza-meilenstein-logo.png`,
+    image: [
+      `${base}/bilder/piazza-meilenstein-innenraum-16x9.jpg`,
+      `${base}/bilder/piazza-meilenstein-innenraum-4x3.jpg`,
+      `${base}/bilder/piazza-meilenstein-pizza-1x1.jpg`,
+    ],
     servesCuisine: ["Italienisch", "Pizza", "Pasta", "Steaks"],
-    hasMenu: `${site.url}/speisekarte`,
-    acceptsReservations: reservation.url,
+    hasMenu: `${base}/speisekarte`,
+    acceptsReservations: `${base}/reservation`,
     address: site.address
       ? {
           "@type": "PostalAddress",
           streetAddress: site.address.street,
           postalCode: site.address.zip,
           addressLocality: site.address.city,
+          addressRegion: site.address.region,
           addressCountry: "CH",
         }
       : { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "CH" },
-    ...(site.phone ? { telephone: site.phone.display } : {}),
+    ...(site.address?.place ? { containedInPlace: { "@type": "Place", name: site.address.place } } : {}),
+    ...(site.phone ? { telephone: site.phone.intl } : {}),
     ...(site.email ? { email: site.email } : {}),
+    ...(site.openingHours ? { openingHoursSpecification: openingHoursSpecification(site.openingHours) } : {}),
+    ...(site.priceRange ? { priceRange: site.priceRange } : {}),
   };
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+  // Damit Google «Piazza Meilenstein» als Namen der Website anzeigt
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${base}/#website`,
+    name: site.name,
+    alternateName: brand,
+    url: `${base}/`,
+    inLanguage: "de-CH",
+    publisher: { "@id": `${base}/#restaurant` },
+  };
+  const json = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json(restaurant) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json(website) }} />
+    </>
+  );
 }
 
 export default function HomePage() {

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Figure from "@/components/Figure";
 import { ArrowLink, CtaBand, PageIntro } from "@/components/Blocks";
 import { Arrow } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Restaurant & Erlebnisse",
   description:
-    "Ein grosser Gastraum unter Bambus und Grün, eine Terrasse unter Sonnenschirmen und eine Bar für den Apéro – dazu Live-Cooking und Events bei Piazza Meilenstein.",
-  alternates: { canonical: "/restaurant" },
-};
+    "Gastraum unter Bambus und Grün, Terrasse unter Sonnenschirmen und eine Bar für den Apéro – dazu Live-Cooking und Events bei Piazza Meilenstein in Langenthal.",
+  path: "/restaurant",
+});
 
 export default function RestaurantPage() {
   return (

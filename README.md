@@ -14,7 +14,7 @@ npm run build && npm start
 
 | Was | Wo |
 |---|---|
-| Adresse, Telefon, E-Mail, Öffnungszeiten, Anreise, Betreiberin (Impressum/Datenschutz) | `src/content/site.ts` – Felder mit `null` sind noch offen und werden auf der Website als «folgt in Kürze» angezeigt |
+| Adresse, Telefon, E-Mail, Öffnungszeiten, Anreise, Betreiberin (Impressum/Datenschutz) | `src/content/site.ts` – Öffnungszeiten nur in `openingHours` ändern (Footer, Kontaktseite und Google-Daten übernehmen sie). Felder mit `null` sind noch offen. |
 | Speisekarte (Gerichte, Preise, Weine, Allergene, Herkunft) | `src/content/menu.json` – identisch mit der PDF-Karte |
 | PDF der Speisekarte | `public/downloads/speisekarte-piazza-meilenstein.pdf` |
 | Häufige Fragen | `src/content/faq.ts` |
@@ -36,11 +36,15 @@ Nach dem Setzen der Variablen neu deployen. In der Datenschutzerklärung den Ver
 
 ## Suchmaschinen
 
-Solange `ALLOW_INDEXING` nicht `true` ist, sperrt `robots.txt` die Seite und alle Seiten tragen `noindex`. Erst aktivieren, wenn Domain, Adresse und Impressum final sind; dann auch `NEXT_PUBLIC_SITE_URL` auf die Domain setzen.
+- **Indexierung:** Auf der Produktionsumgebung (`VERCEL_ENV=production`) ist die Website für Google freigegeben. Vorschau-Deployments und lokale Builds tragen `noindex` und `robots.txt` sperrt sie.
+- **Hauptadresse:** https://www.piazza-meilenstein.ch (fest in `site.ts`, bei einem Domainwechsel dort und in `next.config.ts` anpassen). Canonical-Links, Sitemap, Vorschaubilder und strukturierte Daten verwenden sie. `piazza-meilenstein.vercel.app` leitet dauerhaft dorthin um (`next.config.ts`).
+- **Sitemap:** https://www.piazza-meilenstein.ch/sitemap.xml
+- **Strukturierte Daten** (Startseite): `Restaurant` mit Adresse, Telefon, Öffnungszeiten, Speisekarte, Reservation und Preisspanne sowie `WebSite` für den Namen in den Suchergebnissen.
+- **Google Search Console:** Domain bestätigen (DNS-Eintrag) oder den Code der Methode «HTML-Tag» als `GOOGLE_SITE_VERIFICATION` in Vercel eintragen und neu deployen. Danach die Sitemap einreichen.
 
 ## Veröffentlichen
 
-Dieses Repository ist mit dem Vercel-Projekt **piazza-meilenstein** (Team «Beni's projects») verbunden. Jeder Push auf `main` wird automatisch gebaut (Node 24) und unter https://piazza-meilenstein.vercel.app veröffentlicht. Pushes auf andere Branches ergeben eine Vorschau-Adresse.
+Dieses Repository ist mit dem Vercel-Projekt **piazza-meilenstein** (Team «Beni's projects») verbunden. Jeder Push auf `main` wird automatisch gebaut (Node 24) und unter https://www.piazza-meilenstein.ch veröffentlicht. Pushes auf andere Branches ergeben eine Vorschau-Adresse.
 
 Von Hand geht es auch:
 

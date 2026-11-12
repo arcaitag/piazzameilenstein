@@ -3,7 +3,7 @@ import { allowIndexing, site } from "@/content/site";
 
 export default function robots(): MetadataRoute.Robots {
   if (!allowIndexing) {
-    // Vorschau: nicht indexieren, bis Domain und Angaben final sind (ALLOW_INDEXING=true setzen)
+    // Vorschau-Deployments und lokale Builds nicht indexieren (siehe allowIndexing in site.ts)
     return { rules: [{ userAgent: "*", disallow: "/" }] };
   }
   return {

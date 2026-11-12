@@ -1,23 +1,30 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Figure from "@/components/Figure";
 import { PageIntro, Pending } from "@/components/Blocks";
 import ContactForm from "@/components/forms/ContactForm";
 import { site } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Kontakt & Anreise",
-  description: `Kontakt, Öffnungszeiten und Anreise zu ${site.name} in ${site.city}. Schreiben Sie uns oder reservieren Sie Ihren Tisch online.`,
-  alternates: { canonical: "/kontakt" },
-};
+  description:
+    site.address
+    ? `Adresse, Telefon, Öffnungszeiten und Anreise: ${site.name} an der ${site.address.street} im ${site.address.place ?? site.city}. Tisch online reservieren.`
+    : `Kontakt, Öffnungszeiten und Anreise zu ${site.name} in ${site.city}. Schreiben Sie uns oder reservieren Sie Ihren Tisch online.`,
+  path: "/kontakt",
+});
 
 function HoursList({ rows }: { rows: { days: string; time: string; note?: string }[] }) {
   return (
-    <ul style={{ listStyle: "none" }}>
+    <ul className="hours-list">
       {rows.map((r) => (
         <li key={r.days}>
-          <strong style={{ fontWeight: 500 }}>{r.days}</strong> {r.time}
-          {r.note ? <span className="muted"> · {r.note}</span> : null}
+          <span className="hours-list__days">{r.days}</span>
+          <span className="hours-list__time">
+            {r.time}
+            {r.note ? <span className="muted"> · {r.note}</span> : null}
+          </span>
         </li>
       ))}
     </ul>
@@ -25,7 +32,7 @@ function HoursList({ rows }: { rows: { days: string; time: string; note?: string
 }
 
 export default function KontaktPage() {
-  const missing = !site.address || !site.phone || !site.email || !site.hours;
+  const missing = !site.address || !site.phone || !site.hours;
   return (
     <>
       <PageIntro
@@ -60,23 +67,20 @@ export default function KontaktPage() {
                         <Pending>Genaue Adresse folgt in Kürze</Pending>
                       </>
                     )}
-                    {site.address?.mapsUrl ? (
-                      <p style={{ marginTop: "0.6rem" }}>
-                        <a className="text-link" href={site.address.mapsUrl} target="_blank" rel="noopener noreferrer">
-                          In Google Maps öffnen
-                        </a>
-                      </p>
-                    ) : null}
                   </dd>
                 </div>
                 <div>
                   <dt>Telefon</dt>
                   <dd>{site.phone ? <a href={site.phone.href}>{site.phone.display}</a> : <Pending />}</dd>
                 </div>
-                <div>
-                  <dt>E-Mail</dt>
-                  <dd>{site.email ? <a href={`mailto:${site.email}`}>{site.email}</a> : <Pending />}</dd>
-                </div>
+                {site.email ? (
+                  <div>
+                    <dt>E-Mail</dt>
+                    <dd>
+                      <a href={`mailto:${site.email}`}>{site.email}</a>
+                    </dd>
+                  </div>
+                ) : null}
                 <div>
                   <dt>Öffnungszeiten</dt>
                   <dd>
@@ -92,15 +96,25 @@ export default function KontaktPage() {
                 <div>
                   <dt>Anreise</dt>
                   <dd>
+                    {site.address?.place ? <p>Sie finden uns im {site.address.place}.</p> : null}
                     {site.travel ? (
                       <>
                         {site.travel.car ? <p>{site.travel.car}</p> : null}
                         {site.travel.publicTransport ? <p>{site.travel.publicTransport}</p> : null}
                         {site.travel.parking ? <p>{site.travel.parking}</p> : null}
                       </>
-                    ) : (
+                    ) : null}
+                    {site.address?.directionsUrl ? (
+                      <p style={{ marginTop: "0.6rem" }}>
+                        <a className="text-link" href={site.address.directionsUrl} target="_blank" rel="noopener noreferrer">
+                          Route in Google Maps planen
+                          <span className="visually-hidden"> (neues Fenster)</span>
+                        </a>
+                      </p>
+                    ) : null}
+                    {!site.address?.place && !site.travel && !site.address?.directionsUrl ? (
                       <Pending>Angaben zu Parkplätzen und öffentlichem Verkehr folgen in Kürze</Pending>
-                    )}
+                    ) : null}
                   </dd>
                 </div>
               </dl>

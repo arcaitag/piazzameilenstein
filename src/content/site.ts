@@ -5,7 +5,20 @@
  * (Kontakt, Footer, Impressum, Datenschutz, strukturierte Daten) übernehmen sie automatisch.
  */
 
-export type HoursRow = { days: string; time: string; note?: string };
+import { hoursRows, type HoursRow, type OpeningHours } from "@/lib/hours";
+
+export type { HoursRow };
+
+/** Hauptadresse der Website – Grundlage für Canonical-Links, Sitemap und strukturierte Daten */
+const PRODUCTION_URL = "https://www.piazza-meilenstein.ch";
+
+/** Öffnungszeiten laut Google-Unternehmensprofil (Stand November 2026) */
+const openingHours: OpeningHours[] = [
+  { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "06:30", closes: "23:30" },
+  { days: ["Saturday", "Sunday"], opens: "07:00", closes: "23:30" },
+];
+
+const mapsQuery = encodeURIComponent("Piazza Meilenstein, Lotzwilstrasse 66, 4900 Langenthal");
 
 export type Operator = {
   company: string;
@@ -24,11 +37,25 @@ type Site = {
   description: string;
   city: string;
   url: string;
-  address: { street: string; zip: string; city: string; mapsUrl?: string } | null;
-  phone: { display: string; href: string } | null;
+  address: {
+    street: string;
+    zip: string;
+    city: string;
+    /** Kantonskürzel für strukturierte Daten */
+    region: string;
+    /** Gebäude bzw. Zentrum, in dem das Restaurant liegt */
+    place?: string;
+    mapsUrl?: string;
+    directionsUrl?: string;
+  } | null;
+  /** display: Schreibweise auf der Website, intl: internationales Format für Google */
+  phone: { display: string; href: string; intl: string } | null;
   email: string | null;
+  openingHours: OpeningHours[] | null;
   hours: HoursRow[] | null;
   kitchenHours: HoursRow[] | null;
+  /** Preisspanne pro Person (nur in den strukturierten Daten) */
+  priceRange: string | null;
   travel: { car?: string; publicTransport?: string; parking?: string } | null;
   operator: Operator | null;
   emailService: { name: string; location: string } | null;
@@ -38,26 +65,38 @@ export const site: Site = {
   name: "Piazza Meilenstein",
   tagline: "Ristorante · Pizzeria · Bisteccheria",
   description:
-    "Hausgemachte Pizza und Pasta, Steaks vom Grill und eine grosse Weinkarte – im Restaurant Piazza Meilenstein in Langenthal.",
+    "Italienisches Restaurant im Meilenstein Langenthal: hausgemachte Pizza und Pasta, Dry Aged Beef vom Grill und eine grosse Weinkarte. Tisch online reservieren.",
   city: "Langenthal",
-  // Eigene Domain über NEXT_PUBLIC_SITE_URL, sonst automatisch die Produktionsadresse von Vercel
-  url: (
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000")
-  ).replace(/\/$/, ""),
+  // Feste Hauptadresse (www) – bei einem Domainwechsel hier und in next.config.ts anpassen
+  url: PRODUCTION_URL,
+
+  address: {
+    street: "Lotzwilstrasse 66",
+    zip: "4900",
+    city: "Langenthal",
+    region: "BE",
+    place: "Meilenstein Langenthal",
+    mapsUrl: `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`,
+    directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`,
+  },
+  phone: { display: "062 919 18 10", href: "tel:+41629191810", intl: "+41 62 919 18 10" },
+  openingHours,
+  hours: hoursRows(openingHours),
+  priceRange: "CHF 10–60",
 
   // Noch offen – bitte bestätigen bzw. ergänzen:
-  address: null,
-  phone: null,
   email: null,
-  hours: null,
   kitchenHours: null,
   travel: null,
   operator: null,
   emailService: null,
 };
 
-export const allowIndexing = process.env.ALLOW_INDEXING === "true";
+/**
+ * Google darf die Website indexieren – nur auf der Produktionsumgebung von Vercel.
+ * Vorschau-Deployments und lokale Builds bleiben gesperrt (noindex, robots.txt).
+ */
+export const allowIndexing = process.env.VERCEL_ENV === "production";
 
 /** Online-Reservation über Lunchgate (Reservationssystem foratable) */
 export const reservation = {

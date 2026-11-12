@@ -18,6 +18,17 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
+  // Die Vercel-Adresse auf die eigene Domain umleiten, damit Google nur eine Adresse kennt
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "piazza-meilenstein.vercel.app" }],
+        destination: "https://www.piazza-meilenstein.ch/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

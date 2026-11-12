@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Figure from "@/components/Figure";
 import { ArrowLink, CtaBand, PageIntro } from "@/components/Blocks";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Über uns",
   description:
-    "Wie auf einer italienischen Piazza: Bei Piazza Meilenstein kommt man zusammen. Unsere Haltung – hausgemacht, selbst gereift, offen deklariert und gastfreundlich.",
-  alternates: { canonical: "/ueber-uns" },
-};
+    "Wie auf einer italienischen Piazza: Bei Piazza Meilenstein in Langenthal kommt man zusammen. Hausgemacht, selbst gereift, offen deklariert, gastfreundlich.",
+  path: "/ueber-uns",
+});
 
 const principles = [
   {

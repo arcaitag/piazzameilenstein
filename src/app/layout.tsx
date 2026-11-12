@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ActionBar from "@/components/ActionBar";
 import RevealObserver from "@/components/RevealObserver";
 import { allowIndexing, site } from "@/content/site";
+import { brand, homeTitle, openGraphBase } from "@/lib/seo";
 
 // Überschriften: Cormorant Garamond – elegant und auch in grossen Grössen gut lesbar
 const cormorant = localFont({
@@ -33,24 +34,24 @@ const jost = localFont({
   fallback: ["Futura", "Century Gothic", "system-ui", "sans-serif"],
 });
 
+// Bestätigungscode der Google Search Console (Methode «HTML-Tag»), als Umgebungsvariable bei Vercel
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} · Ristorante, Pizzeria & Bisteccheria in ${site.city}`,
-    template: `%s · ${site.name}`,
+    default: homeTitle,
+    template: `%s · ${brand}`,
   },
   description: site.description,
   applicationName: site.name,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "de_CH",
-    siteName: site.name,
-    title: `${site.name} · Ristorante, Pizzeria & Bisteccheria`,
-    description: site.description,
-  },
-  robots: allowIndexing ? { index: true, follow: true } : { index: false, follow: true },
+  openGraph: { ...openGraphBase, title: homeTitle, description: site.description, url: "/" },
+  twitter: { card: "summary_large_image", title: homeTitle, description: site.description },
+  robots: allowIndexing
+    ? { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 }
+    : { index: false, follow: true },
   formatDetection: { telephone: false, address: false, email: false },
+  ...(googleVerification ? { verification: { google: googleVerification } } : {}),
 };
 
 export const viewport: Viewport = {

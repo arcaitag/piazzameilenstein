@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Pending } from "@/components/Blocks";
 import { site } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Datenschutz",
-  description: `Datenschutzerklärung von ${site.name}: welche Daten wir bei Besuch der Website und bei Anfragen bearbeiten und welche Rechte Sie haben.`,
-  alternates: { canonical: "/datenschutz" },
-};
+  description:
+    `Datenschutzerklärung von ${site.name}: welche Daten wir bei Besuch der Website und bei Anfragen bearbeiten und welche Rechte Sie haben.`,
+  path: "/datenschutz",
+});
 
 export default function DatenschutzPage() {
   const op = site.operator;
@@ -35,8 +37,13 @@ export default function DatenschutzPage() {
       ) : (
         <p>
           {site.name}
+          {site.address ? (
+            <>
+              , {site.address.street}, {site.address.zip} {site.address.city}, Schweiz
+            </>
+          ) : null}
           <br />
-          <Pending>Name und Adresse der verantwortlichen Betreiberin folgen in Kürze.</Pending>
+          <Pending>Name der verantwortlichen Betreiberin folgt in Kürze.</Pending>
         </p>
       )}
 

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Figure from "@/components/Figure";
 import { PageIntro } from "@/components/Blocks";
 import EventForm from "@/components/forms/EventForm";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Feiern & Firmenanlässe",
   description:
-    "Geburtstag, Familienfest, Firmenessen oder Teamabend bei Piazza Meilenstein: Schicken Sie uns Ihre Anfrage – wir melden uns persönlich und besprechen die Details.",
-  alternates: { canonical: "/anlaesse" },
-};
+    "Geburtstag, Familienfest, Firmenessen oder Teamabend bei Piazza Meilenstein in Langenthal: Schicken Sie uns Ihre Anfrage – wir melden uns persönlich.",
+  path: "/anlaesse",
+});
 
 export default function AnlaessePage() {
   return (

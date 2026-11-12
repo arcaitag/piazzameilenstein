@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Pending } from "@/components/Blocks";
 import { site } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Impressum",
-  description: `Impressum von ${site.name}.`,
-  alternates: { canonical: "/impressum" },
-};
+  description:
+    `Impressum von ${site.name}, Ristorante, Pizzeria & Bisteccheria${site.address ? ` an der ${site.address.street}` : ""} in ${site.city}.`,
+  path: "/impressum",
+});
 
 export default function ImpressumPage() {
   const op = site.operator;
@@ -31,15 +33,30 @@ export default function ImpressumPage() {
         <p>
           {site.name}
           <br />
-          <Pending>Firmenname, Rechtsform und Adresse der Betreiberin folgen in Kürze.</Pending>
+          {site.address ? (
+            <>
+              {site.address.street}
+              <br />
+              {site.address.zip} {site.address.city}
+              <br />
+              Schweiz
+              <br />
+            </>
+          ) : null}
+          <Pending>Firmenname und Rechtsform der Betreiberin folgen in Kürze.</Pending>
         </p>
       )}
 
       <h2>Kontakt</h2>
       <p>
-        {op?.phone || site.phone ? (
+        {op?.phone ? (
           <>
-            Telefon: {op?.phone ?? site.phone?.display}
+            Telefon: {op.phone}
+            <br />
+          </>
+        ) : site.phone ? (
+          <>
+            Telefon: <a href={site.phone.href}>{site.phone.display}</a>
             <br />
           </>
         ) : null}
@@ -49,8 +66,12 @@ export default function ImpressumPage() {
             <br />
           </>
         ) : null}
-        {!(op?.phone || site.phone || op?.email || site.email) ? <Pending>Telefon und E-Mail folgen in Kürze.</Pending> : null}
-        <br />
+        {!(op?.phone || site.phone || op?.email || site.email) ? (
+          <>
+            <Pending>Telefon und E-Mail folgen in Kürze.</Pending>
+            <br />
+          </>
+        ) : null}
         Kontaktformular:{" "}
         <Link href="/kontakt#nachricht" className="text-link">
           Nachricht schreiben
